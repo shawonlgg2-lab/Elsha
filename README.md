@@ -1,66 +1,23 @@
-# ELSHA — Bangladesh Fashion Store
+# ELSHA — Handmade Fashion Store
 
-A responsive front-end storefront concept for ELSHA, a women's fashion and handmade crochet clothing brand serving Bangladesh.
+A mobile-friendly storefront prototype for ELSHA, featuring the product photos supplied by the owner.
 
-## Features
+## Included
+- Five handmade crochet product cards with local images
+- ELSHA handmade brand banner
+- Responsive layout for mobile and desktop
+- Demo shopping bag and checkout interface
+- Bangladesh BDT prices and sample delivery fees
 
-- Minimal, mobile-responsive fashion storefront
-- Dresses, occasion wear and handmade crochet collections
-- Product cards and demo shopping bag
-- Checkout form with Bangladesh phone number validation
-- BDT (৳) price display
-- Sample Dhaka / outside-Dhaka delivery fee calculation
-- Cash on Delivery demo flow
-- bKash, Nagad and Rocket payment selection placeholders
+## Publish with GitHub Pages
+1. Create a public repository named `elsha` on GitHub.
+2. Upload every file and folder in this project to the repository root. Do not upload only the ZIP file.
+3. Open **Settings → Pages**.
+4. Select **Deploy from a branch**, branch `main`, folder `/(root)`, then Save.
+5. Your site will appear at `https://YOUR-USERNAME.github.io/elsha/`.
 
-## Live preview with GitHub Pages
+## Before accepting real orders
+This is a static demo. Orders are not stored or sent to ELSHA, and bKash/Nagad/Rocket are not connected to a payment gateway. Prices and delivery fees are sample values and must be confirmed. Add a secure backend, order management, customer notifications, courier integration, and approved merchant payment gateway before live sales.
 
-After uploading these files to a GitHub repository:
-
-1. Open the repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select branch **main** and folder **/(root)**.
-5. Click **Save**.
-6. Wait for GitHub Pages to publish. Your site URL will look like:
-   `https://YOUR-GITHUB-USERNAME.github.io/REPOSITORY-NAME/`
-
-If the repository is named `YOUR-GITHUB-USERNAME.github.io`, the URL will instead be:
-`https://YOUR-GITHUB-USERNAME.github.io/`
-
-## Upload using GitHub website (no coding required)
-
-1. Sign in at https://github.com/
-2. Click **New repository**.
-3. Name it `elsha`.
-4. Choose **Public** (GitHub Pages is available for public repositories on GitHub Free).
-5. Create the repository.
-6. Click **Add file → Upload files**.
-7. Upload `index.html`, `script.js`, `README.md`, `.gitignore`, and `.nojekyll`.
-8. Click **Commit changes**.
-9. Follow the GitHub Pages steps above.
-
-## Important: demo only, not ready for live sales
-
-This is a static front-end prototype. It does not:
-- Save orders to a server or database
-- Send order notifications to the shop owner
-- Process real bKash, Nagad, Rocket, card or other online payments
-- Manage stock, customer accounts or courier bookings
-
-The checkout demo only displays a confirmation in the visitor's browser. Do not treat it as a real order.
-
-Before accepting real customers, connect a secure backend/database, admin dashboard, order notifications, courier service and an approved merchant payment gateway. Never place secret API keys in `script.js` or other browser-side files.
-
-## Before launch
-
-- Replace sample product names, prices, sizes and photos with real inventory.
-- Use product photos you own or are licensed to use.
-- Confirm delivery rates with your courier; current rates are sample values only.
-- Add shipping, returns, privacy and terms pages.
-- Add your business contact details and social links.
-- Connect your custom domain after GitHub Pages is working.
-
-## Local preview
-
-Open `index.html` in a modern browser. For a local development server, you can use VS Code's Live Server extension.
+## Image credits
+All six image files in `assets/images/` were supplied by the site owner for this project.
