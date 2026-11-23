@@ -78,6 +78,22 @@ dialog::backdrop{background:rgba(20,30,50,.6)}
 .ct .row{margin:20px 0;padding:16px;border:1px solid var(--line);border-radius:12px}
 .ct .row small{display:block;color:var(--soft)}
 .ct .row a,.ct .row b{font-size:22px;font-weight:600}
+
+.admin-link{font-size:13px;color:var(--soft);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+.admin-link:hover{background:var(--paper);color:var(--ink)}
+.admin-panel{padding:24px;max-width:760px;margin:0 auto}
+.admin-panel h3{font-family:var(--serif);font-size:30px}
+.admin-panel label{display:block;text-align:left;font-weight:600;margin:12px 0 4px}
+.admin-panel input,.admin-panel textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;font:16px var(--sans);background:#fff;color:var(--ink)}
+.admin-panel textarea{min-height:90px}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.admin-status{margin:10px 0;color:var(--soft);font-size:14px}
+.admin-list{display:grid;gap:8px;margin-top:18px}
+.admin-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.admin-item button{border:1px solid var(--line);border-radius:8px;padding:7px 11px;background:#fff;cursor:pointer}
+.product-price{font-weight:600;color:var(--blue);margin-top:5px}
+.card .fallback{width:100%;aspect-ratio:1/1;display:grid;place-items:center;background:linear-gradient(135deg,#e8eef4,#d6e2ee);color:#52657d;font-family:var(--serif);font-size:34px}
+
 @media(max-width:780px){.hero,.custom,.story,.pd{grid-template-columns:1fr}.trust{grid-template-columns:1fr}nav a:not(.btn){display:none}.hero figure{order:-1}.hero figcaption{left:10px}.custom{padding:32px 22px}.pd img{min-height:240px;max-height:320px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -86,7 +102,7 @@ dialog::backdrop{background:rgba(20,30,50,.6)}
 <div class="top">বাংলাদেশজুড়ে ডেলিভারি · প্রতিটি পোশাক অর্ডার অনুযায়ী বানানো হয়</div>
 <header><div class="wrap nav">
 <a class="logo" href="#top">ELSHA</a>
-<nav><a href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a><a href="#collection">কালেকশন</a><a href="#custom">কাস্টমাইজ</a><a href="#story">আমাদের গল্প</a><a href="#" class="btn" data-contact>যোগাযোগ</a></nav>
+<nav><a href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a><a href="#collection">কালেকশন</a><a href="#custom">কাস্টমাইজ</a><a href="#story">আমাদের গল্প</a><a href="#" class="btn" data-contact>যোগাযোগ</a><a href="#" class="admin-link" id="adminOpen">Admin</a></nav>
 </div></header>
 
 <main id="top">
@@ -138,20 +154,66 @@ Dohar-Joypara, Dhaka, Bangladesh · <a href="tel:+8801621125589">+880 1621-12558
 <div class="btns" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn" href="tel:+8801621125589">কল করুন</a><a class="btn alt" href="https://wa.me/8801621125589" target="_blank" rel="noopener">WhatsApp</a><a class="btn line" href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a></div>
 </div></dialog>
 
+
+<dialog id="adminDialog" aria-label="ELSHA Admin Dashboard">
+<button class="x" aria-label="বন্ধ করুন" data-close>×</button>
+<div class="admin-panel">
+<h3>ELSHA Admin Dashboard</h3>
+<p class="admin-status" id="adminStatus">অ্যাডমিন হিসেবে লগইন করুন।</p>
+<div id="adminLogin">
+<label for="adminEmail">Admin Email</label><input id="adminEmail" type="email" autocomplete="username" placeholder="আপনার admin email">
+<label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="আপনার password">
+<div class="admin-actions"><button class="btn" id="loginBtn">Login</button></div>
+</div>
+<div id="adminWorkspace" hidden>
+<form id="productForm">
+<input id="productId" type="hidden">
+<label for="productName">Product name</label><input id="productName" required maxlength="120">
+<label for="productSubtitle">Short subtitle</label><input id="productSubtitle" maxlength="160">
+<label for="productPrice">Price (optional)</label><input id="productPrice" maxlength="40" placeholder="যেমন: ৳ ১,৫০০">
+<label for="productDescription">Description</label><textarea id="productDescription" required></textarea>
+<label for="productFeatures">Features (প্রতি লাইনে একটি)</label><textarea id="productFeatures" placeholder="হাতে বোনা&#10;রং ও সাইজ কাস্টমাইজ করা যাবে"></textarea>
+<label for="productImage">Product image</label><input id="productImage" type="file" accept="image/*">
+<div class="admin-actions"><button class="btn" type="submit">Save Product</button><button class="btn line" type="button" id="resetProduct">Clear</button><button class="btn line" type="button" id="logoutBtn">Logout</button></div>
+</form>
+<div class="admin-list" id="adminProductList"></div>
+</div>
+</div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-var P=[
+
+const SUPABASE_URL = "https://ncvfevqhzsupzkbjyqld.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_zl9gUQxyZP4UVLNzu73_tw_ilyvI2tE";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+const fallbackProducts=[
 {n:"Floral Crochet Cardigan",i:"assets/images/floral-cardigan.jpg",t:"Ivory · Handmade flowers",d:"আইভরি রঙের নরম ক্রোশে কার্ডিগান, গায়ে হাতে বোনা নীল ও সাদা ফুলের নকশা।",f:["হাতে বোনা ফুলের ডিটেইল","নরম ও আরামদায়ক সুতা","রং ও সাইজ কাস্টমাইজ করা যায়"]},
 {n:"Colour Block Crochet Cardigan",i:"assets/images/blue-crochet-cardigan.png",t:"Blue · White · Mustard",d:"নীল, সাদা ও সরিষা রঙের মিশ্রণে তৈরি রঙিন ব্লক ডিজাইনের ক্রোশে কার্ডিগান।",f:["তিন রঙের ব্লক ডিজাইন","প্রতিদিনের ব্যবহারের জন্য আরামদায়ক","পছন্দমতো রং ও মাপে বানানো হয়"]},
 {n:"Granny Square Cardigan & Cap Set",i:"assets/images/granny-square-set.jpg",t:"Cream · Cardigan + Cap",d:"ক্রিম রঙের গ্র্যানি স্কয়ার কার্ডিগান ও ম্যাচিং ক্যাপের সেট।",f:["কার্ডিগান ও ক্যাপ একসাথে","ঐতিহ্যবাহী গ্র্যানি স্কয়ার প্যাটার্ন","রং ও সাইজ কাস্টমাইজ করা যায়"]},
 {n:"Teddy Pocket Crochet Hoodie",i:"assets/images/blue-teddy-hoodie.jpg",t:"Blue · Kids",d:"নীল রঙের হাতে বোনা ক্রোশে হুডি, পকেটে টেডি বিয়ারের ডিজাইন।",f:["টেডি বিয়ার পকেট","ছোটদের জন্য নরম ও আরামদায়ক","মাপ ও রং অর্ডার অনুযায়ী"]},
-{n:"Multicolour Granny Square Sweater",i:"assets/images/colorful-crochet-knit.jpg",t:"Multicolour · One of a kind",d:"রঙিন গ্র্যানি স্কয়ার প্যাটার্নে বোনা ক্রোশে সোয়েটার—প্রতিটি আলাদা ও বিশেষ।",f:["রঙিন গ্র্যানি স্কয়ার বুনন","প্রতিটি পিস আলাদাভাবে তৈরি","রঙের কম্বিনেশন আপনার পছন্দে"]}];
-var g=document.getElementById("grid");
-P.forEach(function(p,k){var b=document.createElement("button");b.className="card";b.innerHTML='<img src="'+p.i+'" alt="'+p.n+'" loading="lazy"><div class="b"><h3>'+p.n+'</h3><div class="tag">'+p.t+'</div><span class="more">বিস্তারিত দেখুন</span></div>';b.onclick=function(){show(k)};g.appendChild(b)});
-var pd=document.getElementById("pd"),ct=document.getElementById("ct");
-function show(k){var p=P[k];document.getElementById("pi").src=p.i;document.getElementById("pi").alt=p.n;document.getElementById("pn").textContent=p.n;document.getElementById("pdsc").textContent=p.d;document.getElementById("pf").innerHTML=p.f.map(function(x){return"<li>"+x+"</li>"}).join("");document.getElementById("pwa").href="https://wa.me/8801621125589?text="+encodeURIComponent("আমি ELSHA-র \""+p.n+"\" অর্ডার করতে চাই।");pd.showModal()}
-document.addEventListener("click",function(e){var c=e.target.closest("[data-contact]");if(c){e.preventDefault();pd.close();ct.showModal();return}
-if(e.target.closest("[data-close]")){e.target.closest("dialog").close();return}
-if(e.target.tagName==="DIALOG")e.target.close()});
+{n:"Multicolour Granny Square Sweater",i:"assets/images/colorful-crochet-knit.jpg",t:"Multicolour · One of a kind",d:"রঙিন গ্র্যানি স্কয়ার প্যাটার্নে বোনা ক্রোশে সোয়েটার—প্রতিটি আলাদা ও বিশেষ।",f:["রঙিন গ্র্যানি স্কয়ার বুনন","প্রতিটি পিস আলাদাভাবে তৈরি","রঙের কম্বিনেশন আপনার পছন্দে"]}
+];
+let products=[];
+const grid=document.getElementById("grid"),pd=document.getElementById("pd"),ct=document.getElementById("ct");
+const adminDialog=document.getElementById("adminDialog"),statusEl=document.getElementById("adminStatus");
+const loginBox=document.getElementById("adminLogin"),workspace=document.getElementById("adminWorkspace");
+function normalizeProduct(r){return{id:r.id,n:r.name,i:r.image_url||"",t:r.subtitle||"",d:r.description||"",f:Array.isArray(r.features)?r.features:[],price:r.price||""}}
+function makeImage(src,name){if(src){const img=document.createElement("img");img.src=src;img.alt=name;img.loading="lazy";img.onerror=()=>{const f=document.createElement("div");f.className="fallback";f.textContent="ELSHA";img.replaceWith(f)};return img}const f=document.createElement("div");f.className="fallback";f.textContent="ELSHA";return f}
+function renderProducts(){grid.replaceChildren();products.forEach((p,k)=>{const b=document.createElement("button");b.className="card";b.appendChild(makeImage(p.i,p.n));const body=document.createElement("div");body.className="b";const h=document.createElement("h3");h.textContent=p.n;body.appendChild(h);const tag=document.createElement("div");tag.className="tag";tag.textContent=p.t;body.appendChild(tag);if(p.price){const price=document.createElement("div");price.className="product-price";price.textContent=p.price;body.appendChild(price)}const more=document.createElement("span");more.className="more";more.textContent="বিস্তারিত দেখুন";body.appendChild(more);b.appendChild(body);b.addEventListener("click",()=>show(k));grid.appendChild(b)})}
+function show(k){const p=products[k];document.getElementById("pi").src=p.i||"";document.getElementById("pi").alt=p.n;document.getElementById("pn").textContent=p.n;document.getElementById("pdsc").textContent=p.d;const ul=document.getElementById("pf");ul.replaceChildren();p.f.forEach(x=>{const li=document.createElement("li");li.textContent=x;ul.appendChild(li)});if(p.price){const li=document.createElement("li");li.textContent="দাম: "+p.price;ul.appendChild(li)}document.getElementById("pwa").href="https://wa.me/8801621125589?text="+encodeURIComponent("আমি ELSHA-র \""+p.n+"\" অর্ডার করতে চাই।");pd.showModal()}
+async function loadProducts(){const {data,error}=await supabaseClient.from("products").select("*").order("created_at",{ascending:false});if(error){console.error(error);products=fallbackProducts;statusEl.textContent="ডেটাবেস সেটআপ বাকি। ZIP-এর SUPABASE_SETUP.sql চালান।"}else products=data.length?data.map(normalizeProduct):fallbackProducts;renderProducts()}
+function clearProductForm(){document.getElementById("productForm").reset();document.getElementById("productId").value=""}
+function renderAdminList(){const list=document.getElementById("adminProductList");list.replaceChildren();products.filter(p=>p.id).forEach(p=>{const row=document.createElement("div");row.className="admin-item";const name=document.createElement("strong");name.textContent=p.n;const actions=document.createElement("div");const edit=document.createElement("button");edit.textContent="Edit";edit.onclick=()=>{document.getElementById("productId").value=p.id;document.getElementById("productName").value=p.n;document.getElementById("productSubtitle").value=p.t;document.getElementById("productPrice").value=p.price||"";document.getElementById("productDescription").value=p.d;document.getElementById("productFeatures").value=p.f.join("\n")};const del=document.createElement("button");del.textContent="Delete";del.onclick=async()=>{if(!confirm("এই পণ্যটি মুছে ফেলবেন?"))return;const {error}=await supabaseClient.from("products").delete().eq("id",p.id);if(error){statusEl.textContent=error.message;return}await loadProducts();renderAdminList()};actions.append(edit,del);row.append(name,actions);list.append(row)})}
+async function openAdmin(){adminDialog.showModal();const {data:{session}}=await supabaseClient.auth.getSession();loginBox.hidden=!!session;workspace.hidden=!session;statusEl.textContent=session?"আপনি অ্যাডমিন হিসেবে লগইন করেছেন।":"অ্যাডমিন হিসেবে লগইন করুন।";if(session){await loadProducts();renderAdminList()}}
+document.getElementById("adminOpen").addEventListener("click",e=>{e.preventDefault();openAdmin()});
+document.getElementById("loginBtn").addEventListener("click",async()=>{statusEl.textContent="লগইন হচ্ছে...";const {error}=await supabaseClient.auth.signInWithPassword({email:document.getElementById("adminEmail").value,password:document.getElementById("adminPassword").value});if(error){statusEl.textContent="লগইন হয়নি: "+error.message;return}loginBox.hidden=true;workspace.hidden=false;statusEl.textContent="সফলভাবে লগইন হয়েছে।";await loadProducts();renderAdminList()});
+document.getElementById("logoutBtn").addEventListener("click",async()=>{await supabaseClient.auth.signOut();loginBox.hidden=false;workspace.hidden=true;statusEl.textContent="লগআউট সম্পন্ন হয়েছে।"});
+document.getElementById("resetProduct").addEventListener("click",clearProductForm);
+document.getElementById("productForm").addEventListener("submit",async e=>{e.preventDefault();statusEl.textContent="পণ্য সংরক্ষণ হচ্ছে...";const id=document.getElementById("productId").value;const payload={name:document.getElementById("productName").value.trim(),subtitle:document.getElementById("productSubtitle").value.trim(),price:document.getElementById("productPrice").value.trim(),description:document.getElementById("productDescription").value.trim(),features:document.getElementById("productFeatures").value.split("\n").map(x=>x.trim()).filter(Boolean)};const file=document.getElementById("productImage").files[0];if(file){const ext=(file.name.split(".").pop()||"jpg").toLowerCase().replace(/[^a-z0-9]/g,"");const path=crypto.randomUUID()+"."+ext;const {error:uploadError}=await supabaseClient.storage.from("products").upload(path,file,{upsert:false,contentType:file.type});if(uploadError){statusEl.textContent="ছবি আপলোড হয়নি: "+uploadError.message;return}payload.image_url=supabaseClient.storage.from("products").getPublicUrl(path).data.publicUrl}const result=id?await supabaseClient.from("products").update(payload).eq("id",id):await supabaseClient.from("products").insert(payload);if(result.error){statusEl.textContent="সংরক্ষণ হয়নি: "+result.error.message;return}statusEl.textContent="পণ্য সফলভাবে সংরক্ষণ হয়েছে।";clearProductForm();await loadProducts();renderAdminList()});
+document.addEventListener("click",e=>{const c=e.target.closest("[data-contact]");if(c){e.preventDefault();pd.close();ct.showModal();return}if(e.target.closest("[data-close]")){e.target.closest("dialog").close();return}if(e.target.tagName==="DIALOG")e.target.close()});
+supabaseClient.auth.onAuthStateChange((_event,session)=>{if(!session){workspace.hidden=true;loginBox.hidden=false}});
+loadProducts();
 </script>
 </body>
 </html>
