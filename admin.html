@@ -7,21 +7,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1f2c45;--blue:#3f6c9a;--bg:#eef3f7;--line:#d3dee8;--soft:#5b6780;--mustard:#e3a92f;--red:#a83232;--green:#2f7d5b}
+:root{--ink:#4A2336;--rose:#B8587A;--bg:#FDF1F4;--line:#F1D5DE;--soft:#8A6475;--gold:#D6AE62;--red:#A83232;--green:#2f7d5b;--tint:#F9E1E9}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hind Siliguri",sans-serif;font-size:16px;line-height:1.5}
 button,input,select,textarea{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--mustard);outline-offset:2px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .hidden{display:none!important}
 .shell{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
 .side{background:var(--ink);color:#fff;padding:22px 14px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:6px}
 .brand{font-size:26px;font-weight:700;letter-spacing:.14em;padding:0 10px 18px}
 .brand small{display:block;font-size:13px;letter-spacing:0;font-weight:400;opacity:.7}
 .nav{display:flex;flex-direction:column;gap:4px}
-.nav button{background:none;border:0;color:#cfd9e6;text-align:left;padding:11px 12px;border-radius:10px;cursor:pointer}
+.nav button{background:none;border:0;color:#F3D9E2;text-align:left;padding:11px 12px;border-radius:10px;cursor:pointer}
 .nav button.on{background:#fff;color:var(--ink);font-weight:600}
 .side .foot{margin-top:auto;display:flex;flex-direction:column;gap:8px}
-.side a{color:#cfd9e6;padding:6px 12px;font-size:15px}
+.side a{color:#F3D9E2;padding:6px 12px;font-size:15px}
 main{padding:26px;max-width:960px;width:100%}
 h1{font-size:28px;margin:0 0 4px}h2{font-size:20px;margin:0 0 12px}
 .muted{color:var(--soft)}
@@ -31,7 +31,7 @@ h1{font-size:28px;margin:0 0 4px}h2{font-size:20px;margin:0 0 12px}
 .stat b{display:block;font-size:34px;line-height:1.1}
 .stat.warn b{color:var(--red)}.stat.good b{color:var(--green)}
 .btn{border:0;border-radius:10px;background:var(--ink);color:#fff;padding:10px 16px;font-weight:600;cursor:pointer}
-.btn.alt{background:var(--mustard);color:var(--ink)}.btn.light{background:#e4ecf3;color:var(--ink)}.btn.danger{background:var(--red)}
+.btn.alt{background:var(--rose)}.btn.light{background:var(--tint);color:var(--ink)}.btn.danger{background:var(--red)}
 .btn.sm{padding:6px 11px;font-size:14px}.btn:disabled{opacity:.5}
 label{display:block;font-weight:600;margin:12px 0 4px}
 input,select,textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#fff}
@@ -41,16 +41,19 @@ textarea{min-height:84px;resize:vertical}
 .bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
 .bar input{flex:2;min-width:160px}.bar select{flex:1;min-width:130px}
 .item{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px;margin-top:10px;background:#fff}
-.item img,.item .noimg{width:66px;height:66px;object-fit:cover;border-radius:9px;background:var(--bg);flex:none}
+.item img,.item .noimg{width:66px;height:66px;object-fit:cover;border-radius:9px;background:var(--tint);flex:none}
 .item .info{flex:1;min-width:0}.item strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .item small{color:var(--soft)}
 .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
 .stock{display:flex;align-items:center;gap:6px}.stock b{min-width:24px;text-align:center}
-.tag{display:inline-block;font-size:13px;padding:1px 9px;border-radius:99px;background:#e4ecf3}
+.tag{display:inline-block;font-size:13px;padding:1px 9px;border-radius:99px;background:var(--tint)}
 .tag.off{background:#f3dede;color:var(--red)}.tag.low{background:#fbefd0}
-.cats{display:flex;flex-wrap:wrap;gap:8px}.cats span{background:#e4ecf3;border-radius:99px;padding:4px 14px}
+.secs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.secs div{border-radius:12px;padding:14px;background:var(--tint)}.secs div:first-child{background:#E6F1FA}
+.secs b{font-size:30px;display:block;line-height:1.1}
+.help{background:var(--tint);border-radius:10px;padding:10px 12px;font-size:14px;color:var(--soft);margin-top:6px}
 dialog{border:0;border-radius:16px;padding:22px;width:min(560px,94vw);max-height:92vh;color:var(--ink)}
-dialog::backdrop{background:rgba(31,44,69,.55)}
+dialog::backdrop{background:rgba(60,25,42,.55)}
 .preview{width:120px;height:120px;object-fit:cover;border-radius:10px;margin-top:8px}
 .toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:99px;z-index:50;max-width:90vw}
 .login{max-width:420px;margin:12vh auto;padding:0 16px}
@@ -59,7 +62,7 @@ dialog::backdrop{background:rgba(31,44,69,.55)}
  .side{position:fixed;bottom:0;left:0;right:0;top:auto;height:auto;flex-direction:row;padding:6px;z-index:20;justify-content:space-around}
  .brand,.side .foot{display:none}
  .nav{flex-direction:row;width:100%}.nav button{flex:1;text-align:center;padding:10px 4px;font-size:14px}
- main{padding:16px 14px 90px}.row{grid-template-columns:1fr}
+ main{padding:16px 14px 90px}.row,.secs{grid-template-columns:1fr}
  .item{flex-wrap:wrap}.acts{width:100%;justify-content:flex-start}
 }
 </style>
@@ -92,7 +95,7 @@ dialog::backdrop{background:rgba(31,44,69,.55)}
   <section id="v-overview">
    <h1>ওভারভিউ</h1><div class="muted">আপনার দোকানের বর্তমান অবস্থা</div>
    <div class="stats" id="stats"></div>
-   <div class="card"><h2>ক্যাটাগরি</h2><div class="cats" id="catList"></div></div>
+   <div class="card"><h2>সেকশন অনুযায়ী পণ্য</h2><div class="secs" id="secList"></div></div>
    <div class="card"><h2>স্টক কম বা শেষ</h2><div id="lowList"></div></div>
    <div class="card"><h2>সর্বশেষ যোগ করা পণ্য</h2><div id="recentList"></div></div>
   </section>
@@ -104,7 +107,7 @@ dialog::backdrop{background:rgba(31,44,69,.55)}
    </div>
    <div class="bar">
     <input id="search" type="search" placeholder="নাম দিয়ে খুঁজুন" aria-label="পণ্য খুঁজুন">
-    <select id="catFilter" aria-label="ক্যাটাগরি"></select>
+    <select id="catFilter" aria-label="সেকশন"></select>
     <select id="stateFilter" aria-label="অবস্থা"><option value="">সব অবস্থা</option><option value="visible">দেখা যাচ্ছে</option><option value="hidden">লুকানো</option><option value="out">স্টক শেষ</option></select>
    </div>
    <div id="productList"></div>
@@ -128,13 +131,26 @@ dialog::backdrop{background:rgba(31,44,69,.55)}
  <form id="productForm">
   <h2 id="formTitle">নতুন পণ্য</h2>
   <input id="productId" type="hidden">
+  <label for="category">কোন সেকশনে দেখাবেন? *</label>
+  <select id="category" required>
+   <option value="">— সেকশন বেছে নিন —</option>
+   <option value="বাচ্চাদের সোয়েটার">বাচ্চাদের সোয়েটার</option>
+   <option value="মেয়েদের ড্রেস">মেয়েদের ড্রেস</option>
+   <option value="অ্যাক্সেসরিজ">অ্যাক্সেসরিজ</option>
+  </select>
+  <div id="subWrap" class="hidden">
+   <label for="subcategory">অ্যাক্সেসরিজের ধরন *</label>
+   <select id="subcategory">
+    <option value="">— ধরন বেছে নিন —</option>
+    <option>মাথার ক্লিপ</option><option>বাচ্চাদের জুতা</option><option>হ্যান্ডব্যাগ</option><option>অন্যান্য</option>
+   </select>
+  </div>
   <label for="name">পণ্যের নাম *</label><input id="name" required maxlength="160">
   <label for="subtitle">সাবটাইটেল</label><input id="subtitle" placeholder="রং বা ছোট পরিচিতি">
   <div class="row">
-   <div><label for="category">ক্যাটাগরি</label><input id="category" list="catOptions" placeholder="যেমন: কার্ডিগান"><datalist id="catOptions"></datalist></div>
    <div><label for="price">দাম</label><input id="price" placeholder="৳১,২৫০"></div>
+   <div><label for="stock">স্টক সংখ্যা *</label><input id="stock" type="number" min="0" step="1" value="0" required></div>
   </div>
-  <label for="stock">স্টক সংখ্যা *</label><input id="stock" type="number" min="0" step="1" value="0" required>
   <label for="description">বিবরণ</label><textarea id="description"></textarea>
   <label for="features">বৈশিষ্ট্য (প্রতি লাইনে একটি)</label><textarea id="features"></textarea>
   <label for="photo">ছবি (৫ MB পর্যন্ত)</label><input id="photo" type="file" accept="image/*">
@@ -153,12 +169,21 @@ const BUCKET="products-images";
 const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 const $=id=>document.getElementById(id);
 const LOW=3;
+const SECTIONS=[["kids","বাচ্চাদের সোয়েটার"],["dress","মেয়েদের ড্রেস"],["acc","অ্যাক্সেসরিজ"]];
 let products=[],existingImage="",user=null;
 
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
 function toast(msg){const t=el("div","toast",msg);document.body.appendChild(t);setTimeout(()=>t.remove(),2600)}
 const stock=p=>Number(p.stock_qty??0);
 const visible=p=>p.is_visible!==false;
+function groupOf(cat){
+ const c=(cat||"").toLowerCase();
+ if(/ক্লিপ|জুতা|ব্যাগ|clip|shoe|bag|এক্সেসরি|অ্যাক্সেসরি|accessor|টুপি|স্কার্ফ|cap|scarf|beanie/.test(c))return"acc";
+ if(/ড্রেস|ফ্রক|dress|frock/.test(c))return"dress";
+ if(/সোয়েটার|কার্ডিগান|হুডি|বাচ্চা|sweater|cardigan|hoodie|kids|set|সেট/.test(c))return"kids";
+ return"acc";
+}
+const secName=k=>(SECTIONS.find(s=>s[0]===k)||[])[1];
 
 /* ---------- Auth ---------- */
 function enter(u){user=u;$("loginPanel").classList.add("hidden");$("app").classList.remove("hidden");loadProducts();loadSettings()}
@@ -185,10 +210,8 @@ function renderOverview(){
  const S=$("stats");S.replaceChildren();
  [["মোট পণ্য",products.length,""],["সাইটে দেখা যাচ্ছে",products.length-hid.length,"good"],["লুকানো",hid.length,""],["স্টক শেষ",out.length,out.length?"warn":""],["স্টক কম",low.length,low.length?"warn":""]]
   .forEach(([l,n,c])=>{const d=el("div","stat "+c);d.append(el("b","",n.toLocaleString("bn-BD")),el("span","muted",l));S.appendChild(d)});
- const cats={};products.forEach(p=>{const c=(p.category||"").trim()||"ক্যাটাগরি নেই";cats[c]=(cats[c]||0)+1});
- const C=$("catList");C.replaceChildren();
- Object.entries(cats).forEach(([c,n])=>C.appendChild(el("span","",c+" · "+n.toLocaleString("bn-BD"))));
- if(!products.length)C.textContent="পণ্য যোগ করলে ক্যাটাগরি এখানে দেখা যাবে।";
+ const C=$("secList");C.replaceChildren();
+ SECTIONS.forEach(([k,n])=>{const d=el("div");d.append(el("b","",products.filter(p=>groupOf(p.category)===k).length.toLocaleString("bn-BD")),el("span","",n));C.appendChild(d)});
  const L=$("lowList");L.replaceChildren();
  const need=[...out,...low];
  if(!need.length)L.textContent="সব পণ্যের স্টক ঠিক আছে।";
@@ -198,14 +221,12 @@ function renderOverview(){
  if(!products.length)R.textContent="এখনও কোনো পণ্য নেই। \"পণ্য\" ট্যাবে গিয়ে প্রথম পণ্যটি যোগ করুন।";
 }
 function renderFilters(){
- const cats=[...new Set(products.map(p=>(p.category||"").trim()).filter(Boolean))].sort();
- const f=$("catFilter"),cur=f.value;f.replaceChildren(new Option("সব ক্যাটাগরি",""));
- cats.forEach(c=>f.appendChild(new Option(c,c)));f.value=cats.includes(cur)?cur:"";
- const dl=$("catOptions");dl.replaceChildren();cats.forEach(c=>dl.appendChild(new Option(c)));
+ const f=$("catFilter"),cur=f.value;f.replaceChildren(new Option("সব সেকশন",""));
+ SECTIONS.forEach(([k,n])=>f.appendChild(new Option(n,k)));f.value=cur;
 }
 function filtered(){
  const q=$("search").value.trim().toLowerCase(),c=$("catFilter").value,s=$("stateFilter").value;
- return products.filter(p=>(!q||(p.name||"").toLowerCase().includes(q))&&(!c||(p.category||"").trim()===c)&&
+ return products.filter(p=>(!q||(p.name||"").toLowerCase().includes(q))&&(!c||groupOf(p.category)===c)&&
   (!s||(s==="visible"&&visible(p))||(s==="hidden"&&!visible(p))||(s==="out"&&stock(p)<=0)));
 }
 function renderList(){
@@ -220,7 +241,7 @@ function row(p,compact){
  const r=el("div","item");
  if(p.image_url){const i=el("img");i.src=p.image_url;i.alt=p.name||"";r.appendChild(i)}else r.appendChild(el("div","noimg"));
  const info=el("div","info");info.appendChild(el("strong","",p.name));
- const m=el("small","",[p.category,p.price].filter(Boolean).join(" · ")+" ");info.appendChild(m);
+ const m=el("small","",[p.category||secName(groupOf(p.category)),p.price].filter(Boolean).join(" · ")+" ");info.appendChild(m);
  if(!visible(p))m.appendChild(el("span","tag off","লুকানো"));
  if(stock(p)<=0)m.appendChild(el("span","tag off","স্টক শেষ"));else if(stock(p)<=LOW)m.appendChild(el("span","tag low","স্টক কম"));
  r.appendChild(info);
@@ -257,17 +278,21 @@ async function removeProduct(p){
 }
 
 /* ---------- Product form ---------- */
+function syncSub(){const acc=$("category").value==="অ্যাক্সেসরিজ";$("subWrap").classList.toggle("hidden",!acc);$("subcategory").required=acc}
+$("category").onchange=syncSub;
 function openForm(p){
  $("productForm").reset();existingImage="";$("preview").classList.add("hidden");$("formStatus").textContent="";
  $("productId").value=p?p.id:"";
  $("formTitle").textContent=p?"পণ্য এডিট করুন":"নতুন পণ্য";
  if(p){
-  $("name").value=p.name||"";$("subtitle").value=p.subtitle||"";$("category").value=p.category||"";$("price").value=p.price||"";
+  const k=groupOf(p.category);$("category").value=secName(k);syncSub();
+  if(k==="acc"){const subs=["মাথার ক্লিপ","বাচ্চাদের জুতা","হ্যান্ডব্যাগ","অন্যান্য"];$("subcategory").value=subs.find(s=>(p.category||"").includes(s))||""}
+  $("name").value=p.name||"";$("subtitle").value=p.subtitle||"";$("price").value=p.price||"";
   $("stock").value=stock(p);$("description").value=p.description||"";
   $("features").value=Array.isArray(p.features)?p.features.join("\n"):"";
   $("is_visible").checked=visible(p);existingImage=p.image_url||"";
   if(existingImage){$("preview").src=existingImage;$("preview").classList.remove("hidden")}
- }
+ }else syncSub();
  $("dlg").showModal();
 }
 $("addBtn").onclick=()=>openForm(null);
@@ -288,8 +313,11 @@ $("productForm").onsubmit=async e=>{
  e.preventDefault();const btn=$("saveBtn");btn.disabled=true;$("formStatus").textContent="সেভ হচ্ছে...";
  try{
   let image_url=existingImage;const f=$("photo").files[0];if(f)image_url=await uploadPhoto(f);
+  const sec=$("category").value;if(!sec)throw new Error("সেকশন বেছে নিন।");
+  let category=sec;
+  if(sec==="অ্যাক্সেসরিজ"){const sub=$("subcategory").value;if(!sub)throw new Error("অ্যাক্সেসরিজের ধরন বেছে নিন।");category=sec+" - "+sub}
   const payload={
-   name:$("name").value.trim(),subtitle:$("subtitle").value.trim(),category:$("category").value.trim(),
+   name:$("name").value.trim(),subtitle:$("subtitle").value.trim(),category,
    description:$("description").value.trim(),price:$("price").value.trim(),
    features:$("features").value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean),
    stock_qty:Number($("stock").value),is_visible:$("is_visible").checked,image_url
