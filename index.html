@@ -39,13 +39,14 @@ h2{font-family:var(--serif);font-size:clamp(34px,4.4vw,48px);font-weight:600;lin
 .sec{padding:56px 0}
 .sec>.wrap>p.sub{color:var(--soft);margin:8px 0 32px;max-width:36em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
-.card{background:var(--paper);border-radius:14px;overflow:hidden;cursor:pointer;border:1px solid var(--line);text-align:left;font:inherit;color:inherit;padding:0;transition:transform .25s,box-shadow .25s}
+.card{background:var(--paper);border-radius:14px;overflow:hidden;cursor:pointer;border:1px solid var(--line);text-align:left;font:inherit;color:inherit;padding:0;transition:transform .25s,box-shadow .25s;position:relative}
 .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(31,44,69,.12)}
 .card img{width:100%;aspect-ratio:1/1;object-fit:cover}
 .card .b{padding:16px 18px 20px}
 .card h3{font-family:var(--serif);font-size:23px;line-height:1.2;margin-bottom:6px}
 .card .tag{font-size:14px;color:var(--soft)}
 .card .more{display:inline-block;margin-top:10px;font-weight:600;color:var(--blue)}
+.badge{position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;font-size:13px;padding:2px 12px;border-radius:99px}
 .custom{background:var(--ink);color:#fff;border-radius:20px;padding:44px 36px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
 .custom h2{color:#fff}
 .custom p{color:#C9D3E3}
@@ -80,16 +81,6 @@ dialog::backdrop{background:rgba(20,30,50,.6)}
 .ct .row a,.ct .row b{font-size:22px;font-weight:600}
 .admin-link{font-size:13px;color:var(--soft);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
 .admin-link:hover{background:var(--paper);color:var(--ink)}
-.admin-panel{padding:24px;max-width:760px;margin:0 auto}
-.admin-panel h3{font-family:var(--serif);font-size:30px}
-.admin-panel label{display:block;text-align:left;font-weight:600;margin:12px 0 4px}
-.admin-panel input,.admin-panel textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;font:16px var(--sans);background:#fff;color:var(--ink)}
-.admin-panel textarea{min-height:90px}
-.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.admin-status{margin:10px 0;color:var(--soft);font-size:14px}
-.admin-list{display:grid;gap:8px;margin-top:18px}
-.admin-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}
-.admin-item button{border:1px solid var(--line);border-radius:8px;padding:7px 11px;background:#fff;cursor:pointer}
 .product-price{font-weight:600;color:var(--blue);margin-top:5px}
 .card .fallback{width:100%;aspect-ratio:1/1;display:grid;place-items:center;background:linear-gradient(135deg,#e8eef4,#d6e2ee);color:#52657d;font-family:var(--serif);font-size:34px}
 @media(max-width:780px){.hero,.custom,.story,.pd{grid-template-columns:1fr}.trust{grid-template-columns:1fr}nav a:not(.btn){display:none}.hero figure{order:-1}.hero figcaption{left:10px}.custom{padding:32px 22px}.pd img{min-height:240px;max-height:320px}}
@@ -97,23 +88,23 @@ dialog::backdrop{background:rgba(20,30,50,.6)}
 </style>
 </head>
 <body>
-<div class="top">বাংলাদেশজুড়ে ডেলিভারি · প্রতিটি পোশাক অর্ডার অনুযায়ী বানানো হয়</div>
+<div class="top" id="announce">বাংলাদেশজুড়ে ডেলিভারি · প্রতিটি পোশাক অর্ডার অনুযায়ী বানানো হয়</div>
 <header><div class="wrap nav">
 <a class="logo" href="#top">ELSHA</a>
-<nav><a href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a><a href="#collection">কালেকশন</a><a href="#custom">কাস্টমাইজ</a><a href="#story">আমাদের গল্প</a><a href="#" class="btn" data-contact>যোগাযোগ</a><a href="admin.html" class="admin-link" id="adminOpen">Admin</a></nav>
+<nav><a data-fb href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a><a href="#collection">কালেকশন</a><a href="#custom">কাস্টমাইজ</a><a href="#story">আমাদের গল্প</a><a href="#" class="btn" data-contact>যোগাযোগ</a><a href="admin.html" class="admin-link" id="adminOpen">Admin</a></nav>
 </div></header>
 <main id="top">
 <section class="wrap hero">
 <div><h1>Handmade with love, made for you.</h1><p>হাতে বোনা ক্রোশে পোশাক—আপনার পছন্দের রং, ডিজাইন ও মাপ অনুযায়ী যত্ন নিয়ে তৈরি।</p><div class="cta"><a class="btn" href="#collection">কালেকশন দেখুন</a><a class="btn line" href="#" data-contact>অর্ডার করতে যোগাযোগ করুন</a></div></div>
-<figure><img src="assets/images/hero-kids.jpg" alt="ELSHA হাতে তৈরি ক্রোশে পোশাকে দুই শিশু"><figcaption>Little Fashion, Endless Love</figcaption></figure>
+<figure><img src="assets/images/hero-kids.jpg" alt="ELSHA হাতে তৈরি ক্রোশে পোশাকে দুই শিশু"><figcaption id="tagline">Little Fashion, Endless Love</figcaption></figure>
 </section>
 <section class="sec" id="collection"><div class="wrap"><h2>Handmade Collection</h2><p class="sub">যেকোনো পোশাকে ক্লিক করে বিস্তারিত দেখুন।</p><div class="grid" id="grid"></div></div></section>
 <section class="sec" id="custom"><div class="wrap"><div class="custom"><div><h2>Custom Made, Just for You</h2><p style="margin-top:12px">ELSHA-র প্রতিটি পোশাক অর্ডার পাওয়ার পর আপনার জন্য আলাদাভাবে বানানো হয়। তাই রং, সাইজ ও ডিজাইন সবই আপনার পছন্দমতো।</p><p style="margin-top:20px"><a class="btn alt" href="#" data-contact>এখনই অর্ডার করুন</a></p></div><div class="steps"><div><b>পছন্দ বেছে নিন</b><span>কালেকশন থেকে ডিজাইন নির্বাচন করুন।</span></div><div><b>রং ও মাপ জানান</b><span>ফোনে আপনার পছন্দ ও সাইজ জানান।</span></div><div><b>আমরা হাতে বানাই</b><span>যত্ন নিয়ে তৈরি করে সারা বাংলাদেশে পাঠাই।</span></div></div></div></div></section>
 <section class="sec" id="story"><div class="wrap"><div class="story"><img src="assets/images/colorful-crochet-knit.jpg" alt="রঙিন হাতে বোনা ক্রোশে নিটওয়্যার"><div><h2>Every stitch, with care</h2><p>ELSHA বিশ্বাস করে, সুন্দর পোশাক শুধু ট্রেন্ড নয়—এটি যত্ন আর ভালোবাসার প্রকাশ। ছোটদের আরামদায়ক ক্রোশে পোশাক থেকে শুরু করে প্রতিটি হ্যান্ডমেড ডিজাইনে আমরা রাখি নিখুঁত বুনন।</p></div></div><div class="trust"><div><b>Nationwide delivery</b><span>বাংলাদেশের সর্বত্র ডেলিভারি</span></div><div><b>Made to order</b><span>আপনার পছন্দ অনুযায়ী কাস্টমাইজ</span></div><div><b>Made with care</b><span>যত্নে তৈরি, ভালোবাসায় বাছাই</span></div></div></div></section>
 </main>
-<footer><div class="wrap"><span class="logo">ELSHA</span>Dohar-Joypara, Dhaka, Bangladesh · <a href="tel:+8801621125589">+880 1621-125589</a><br><a href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener" style="text-decoration:underline">Facebook Page</a><br>© 2026 ELSHA. All rights reserved.</div></footer>
+<footer><div class="wrap"><span class="logo">ELSHA</span><span data-addr>Dohar-Joypara, Dhaka, Bangladesh</span> · <a data-tel href="tel:+8801621125589">+880 1621-125589</a><br><a data-fb href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener" style="text-decoration:underline">Facebook Page</a><br>© 2026 ELSHA. All rights reserved.</div></footer>
 <dialog id="pd" aria-label="Product details"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="pd"><img id="pi" alt=""><div class="t"><h3 id="pn"></h3><p id="pdsc"></p><ul id="pf"></ul><div class="btns"><a class="btn alt" id="pwa" target="_blank" rel="noopener">এই ডিজাইন অর্ডার করুন</a><a class="btn line" href="#" data-contact>যোগাযোগ</a></div></div></div></dialog>
-<dialog id="ct" aria-label="Contact"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="ct"><h3>যোগাযোগ করুন</h3><p style="color:var(--soft)">কাস্টম অর্ডার বা যেকোনো প্রশ্নে আমাদের জানান।</p><div class="row"><small>Phone / WhatsApp</small><a href="tel:+8801621125589">+8801621125589</a></div><div class="row"><small>Address</small><b style="font-size:19px">Dohar-Joypara<br>Dhaka-Bangladesh</b></div><div class="btns" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn" href="tel:+8801621125589">কল করুন</a><a class="btn alt" href="https://wa.me/8801621125589" target="_blank" rel="noopener">WhatsApp</a><a class="btn line" href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a></div></div></dialog>
+<dialog id="ct" aria-label="Contact"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="ct"><h3>যোগাযোগ করুন</h3><p style="color:var(--soft)">কাস্টম অর্ডার বা যেকোনো প্রশ্নে আমাদের জানান।</p><div class="row"><small>Phone / WhatsApp</small><a data-tel href="tel:+8801621125589">+8801621125589</a></div><div class="row"><small>Address</small><b data-addr style="font-size:19px">Dohar-Joypara, Dhaka-Bangladesh</b></div><div class="btns" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn" data-telbtn href="tel:+8801621125589">কল করুন</a><a class="btn alt" data-wa href="https://wa.me/8801621125589" target="_blank" rel="noopener">WhatsApp</a><a class="btn line" data-fb href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a></div></div></dialog>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const SUPABASE_URL = "https://ncvfevqhzsupzkbjyqld.supabase.co";
@@ -127,14 +118,38 @@ const fallbackProducts=[
 {n:"Multicolour Granny Square Sweater",i:"assets/images/colorful-crochet-knit.jpg",t:"Multicolour · One of a kind",d:"রঙিন গ্র্যানি স্কয়ার প্যাটার্নে বোনা ক্রোশে সোয়েটার—প্রতিটি আলাদা ও বিশেষ।",f:["রঙিন গ্র্যানি স্কয়ার বুনন","প্রতিটি পিস আলাদাভাবে তৈরি","রঙের কম্বিনেশন আপনার পছন্দে"]}
 ];
 let products=[];
+let phone="+8801621125589";
 const grid=document.getElementById("grid"),pd=document.getElementById("pd"),ct=document.getElementById("ct");
-function normalizeProduct(r){return{id:r.id,n:r.name,i:r.image_url||"",t:r.subtitle||"",d:r.description||"",f:Array.isArray(r.features)?r.features:[],price:r.price||""}}
+function normalizeProduct(r){return{id:r.id,n:r.name,i:r.image_url||"",t:r.subtitle||"",d:r.description||"",f:Array.isArray(r.features)?r.features:[],price:r.price||"",out:Number(r.stock_qty??1)<=0}}
 function makeImage(src,name){if(src){const img=document.createElement("img");img.src=src;img.alt=name;img.loading="lazy";img.onerror=()=>{const f=document.createElement("div");f.className="fallback";f.textContent="ELSHA";img.replaceWith(f)};return img}const f=document.createElement("div");f.className="fallback";f.textContent="ELSHA";return f}
-function renderProducts(){grid.replaceChildren();products.forEach((p,k)=>{const b=document.createElement("button");b.className="card";b.appendChild(makeImage(p.i,p.n));const body=document.createElement("div");body.className="b";const h=document.createElement("h3");h.textContent=p.n;body.appendChild(h);const tag=document.createElement("div");tag.className="tag";tag.textContent=p.t;body.appendChild(tag);if(p.price){const price=document.createElement("div");price.className="product-price";price.textContent=p.price;body.appendChild(price)}const more=document.createElement("span");more.className="more";more.textContent="বিস্তারিত দেখুন";body.appendChild(more);b.appendChild(body);b.addEventListener("click",()=>show(k));grid.appendChild(b)})}
-function show(k){const p=products[k];document.getElementById("pi").src=p.i||"";document.getElementById("pi").alt=p.n;document.getElementById("pn").textContent=p.n;document.getElementById("pdsc").textContent=p.d;const ul=document.getElementById("pf");ul.replaceChildren();p.f.forEach(x=>{const li=document.createElement("li");li.textContent=x;ul.appendChild(li)});if(p.price){const li=document.createElement("li");li.textContent="দাম: "+p.price;ul.appendChild(li)}document.getElementById("pwa").href="https://wa.me/8801621125589?text="+encodeURIComponent("আমি ELSHA-র \""+p.n+"\" অর্ডার করতে চাই।");pd.showModal()}
-async function loadProducts(){const {data,error}=await supabaseClient.from("products").select("*").order("created_at",{ascending:false});if(error){console.error(error);products=fallbackProducts}else products=data.length?data.map(normalizeProduct):fallbackProducts;renderProducts()}
+function renderProducts(){grid.replaceChildren();products.forEach((p,k)=>{const b=document.createElement("button");b.className="card";b.appendChild(makeImage(p.i,p.n));if(p.out){const bd=document.createElement("span");bd.className="badge";bd.textContent="স্টক শেষ";b.appendChild(bd)}const body=document.createElement("div");body.className="b";const h=document.createElement("h3");h.textContent=p.n;body.appendChild(h);const tag=document.createElement("div");tag.className="tag";tag.textContent=p.t;body.appendChild(tag);if(p.price){const price=document.createElement("div");price.className="product-price";price.textContent=p.price;body.appendChild(price)}const more=document.createElement("span");more.className="more";more.textContent="বিস্তারিত দেখুন";body.appendChild(more);b.appendChild(body);b.addEventListener("click",()=>show(k));grid.appendChild(b)})}
+function show(k){const p=products[k];document.getElementById("pi").src=p.i||"";document.getElementById("pi").alt=p.n;document.getElementById("pn").textContent=p.n;document.getElementById("pdsc").textContent=p.d;const ul=document.getElementById("pf");ul.replaceChildren();p.f.forEach(x=>{const li=document.createElement("li");li.textContent=x;ul.appendChild(li)});if(p.price){const li=document.createElement("li");li.textContent="দাম: "+p.price;ul.appendChild(li)}document.getElementById("pwa").href="https://wa.me/"+phone.replace(/\D/g,"")+"?text="+encodeURIComponent("আমি ELSHA-র \""+p.n+"\" অর্ডার করতে চাই।");pd.showModal()}
+async function loadProducts(){
+ const {data,error}=await supabaseClient.from("products").select("*").order("created_at",{ascending:false});
+ if(error){console.error(error);products=fallbackProducts}
+ else if(!data.length){products=fallbackProducts}
+ else{products=data.filter(r=>r.is_visible!==false).map(normalizeProduct)}
+ renderProducts();
+}
+async function loadSettings(){
+ const {data,error}=await supabaseClient.from("site_settings").select("*");
+ if(error||!data)return;
+ const s={};data.forEach(r=>{if(r.value&&r.value.trim())s[r.key]=r.value.trim()});
+ if(s.announcement)document.getElementById("announce").textContent=s.announcement;
+ if(s.tagline)document.getElementById("tagline").textContent=s.tagline;
+ if(s.address)document.querySelectorAll("[data-addr]").forEach(e=>e.textContent=s.address);
+ if(s.facebook)document.querySelectorAll("[data-fb]").forEach(e=>e.href=s.facebook);
+ if(s.phone){
+  phone=s.phone;const tel="tel:"+s.phone.replace(/[^\d+]/g,"");
+  document.querySelectorAll("[data-tel]").forEach(e=>{e.href=tel;e.textContent=s.phone});
+  document.querySelectorAll("[data-telbtn]").forEach(e=>e.href=tel);
+  document.querySelectorAll("[data-wa]").forEach(e=>e.href="https://wa.me/"+s.phone.replace(/\D/g,""));
+ }
+}
 document.addEventListener("click",e=>{const c=e.target.closest("[data-contact]");if(c){e.preventDefault();pd.close();ct.showModal();return}if(e.target.closest("[data-close]")){e.target.closest("dialog").close();return}if(e.target.tagName==="DIALOG")e.target.close()});
+document.getElementById("adminOpen").addEventListener("click",e=>{e.preventDefault();window.location.href="admin.html"});
 loadProducts();
+loadSettings();
 </script>
 </body>
 </html>
