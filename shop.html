@@ -212,11 +212,22 @@ dialog{border-radius:14px}
 }
 
 
+/* Focused Shop Page improvements */
+.shop-intro{padding:42px 20px 12px;text-align:center}
+.shop-intro .eyebrow{display:block;color:#A78342;font-size:12px;font-weight:700;letter-spacing:.2em;margin-bottom:8px}
+.shop-intro h1{font:600 clamp(36px,5vw,54px)/1.08 var(--serif);margin-bottom:10px;color:var(--ink)}
+.shop-intro p{color:var(--soft);max-width:620px;margin:0 auto}
+.subcategory-pills{display:none;gap:8px;flex-wrap:wrap;padding:2px 0 16px}
+.subcategory-pills.visible{display:flex}
+.subcategory-pill{border:1px solid #D8DCCF;background:#fff;color:#526458;border-radius:999px;padding:7px 13px;font:500 12px var(--sans);cursor:pointer}
+.subcategory-pill.active,.subcategory-pill:hover{background:#D9B56D;border-color:#D9B56D;color:#203D32}
+@media(max-width:780px){.shop-intro{padding:30px 16px 8px}.shop-intro h1{font-size:39px}.subcategory-pills{gap:7px}.subcategory-pill{padding:7px 11px;font-size:11px}}
+
 /* Multi-page navigation additions */
 .page-intro{padding:52px 20px 28px}.page-intro h1{font:600 clamp(38px,5vw,58px)/1.08 var(--serif);margin-bottom:10px}.page-intro p{color:var(--soft);max-width:650px}.content-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(22px,4vw,38px);margin:22px auto 46px;max-width:920px}.content-panel h2,.content-panel h3{margin:0 0 12px}.content-panel p{color:var(--soft);margin:10px 0}.content-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.content-tile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}.content-tile h3{font-size:19px;margin-bottom:8px}.page-nav-link{font-weight:600;color:var(--blue)}.page-hero-note{background:#203D32;color:#fff;border-radius:14px;padding:28px;margin:24px auto}.page-hero-note p{color:#E4E9E3}.faq-item{border-bottom:1px solid var(--line);padding:17px 0}.faq-item:last-child{border:0}.faq-item summary{font-weight:600;cursor:pointer}.faq-item p{margin:9px 0 0;color:var(--soft)}.page-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.site-footer .footer-links{flex-wrap:wrap}
 @media(max-width:780px){.page-intro{padding:34px 16px 18px}.content-panel{margin:16px 12px 32px;padding:22px 18px}}
 
-.hero,.main>#custom,.main>#story,#custom,#story{display:none!important}.collection-sec{padding-top:36px}.collection-sec .section-heading{margin-top:10px}
+.collection-sec{padding-top:24px}.collection-sec .section-heading{margin-top:10px}
 </style>
 </head>
 <body>
@@ -239,11 +250,11 @@ dialog{border-radius:14px}
   </div>
 </header>
 <main id="top">
-<section class="wrap hero"><div><h1>Handmade with love, made for you.</h1><p>হাতে বোনা ক্রোশে পোশাক—আপনার পছন্দের রং, ডিজাইন ও মাপ অনুযায়ী যত্ন নিয়ে তৈরি।</p><div class="cta"><a class="btn" href="#collection">কালেকশন দেখুন</a><a class="btn line" href="#" data-contact>অর্ডার করতে যোগাযোগ করুন</a></div></div><figure><img src="assets/images/hero-kids.jpg" alt="ELSHA হাতে তৈরি ক্রোশে পোশাকে দুই শিশু"><figcaption>Little Fashion, Endless Love</figcaption></figure></section>
+<section class="shop-intro wrap"><span class="eyebrow">THE ELSHA EDIT</span><h1>Shop Handmade Collection</h1><p>আপনার পছন্দের হাতে বোনা পোশাক ও অ্যাক্সেসরিজ খুঁজে নিন—প্রতিটি ডিজাইন তৈরি হয় যত্ন ও ভালোবাসায়।</p></section>
 <section class="sec collection-sec" id="collection">
   <div class="wrap">
     <div class="section-heading">
-      <div><span class="eyebrow">THE ELSHA EDIT</span><h2>Handmade Collection</h2><p class="sub">আপনার পছন্দের হাতে বোনা ডিজাইনটি খুঁজে নিন।</p></div>
+      <div><h2>Browse the Collection</h2><p class="sub">ক্যাটাগরি বেছে নিয়ে আপনার পছন্দের ডিজাইনটি খুঁজুন।</p></div>
       <span class="collection-count" id="collectionCount">পণ্য লোড হচ্ছে...</span>
     </div>
     <div class="shop-tools">
@@ -256,11 +267,16 @@ dialog{border-radius:14px}
       <button type="button" class="category-pill" data-category="dress" aria-pressed="false">মেয়েদের ড্রেস</button>
       <button type="button" class="category-pill" data-category="acc" aria-pressed="false">অ্যাক্সেসরিজ</button>
     </div>
+    <div class="subcategory-pills" id="accessorySubcategoryPills" role="group" aria-label="অ্যাক্সেসরিজের সাব-ক্যাটাগরি">
+      <button type="button" class="subcategory-pill active" data-subcategory="all" aria-pressed="true">সব অ্যাক্সেসরিজ</button>
+      <button type="button" class="subcategory-pill" data-subcategory="মাথার ক্লিপ" aria-pressed="false">মাথার ক্লিপ</button>
+      <button type="button" class="subcategory-pill" data-subcategory="বাচ্চাদের জুতা" aria-pressed="false">বাচ্চাদের জুতা</button>
+      <button type="button" class="subcategory-pill" data-subcategory="হ্যান্ডব্যাগ" aria-pressed="false">হ্যান্ডব্যাগ</button>
+      <button type="button" class="subcategory-pill" data-subcategory="অন্যান্য" aria-pressed="false">অন্যান্য</button>
+    </div>
     <div id="collectionSections"><p class="loading">কালেকশন লোড হচ্ছে...</p></div>
   </div>
 </section>
-<section class="sec" id="custom"><div class="wrap"><div class="custom"><div><h2>Custom Made, Just for You</h2><p style="margin-top:12px">ELSHA-র প্রতিটি পোশাক অর্ডার পাওয়ার পর আপনার জন্য আলাদাভাবে বানানো হয়। তাই রং, সাইজ ও ডিজাইন সবই আপনার পছন্দমতো।</p><p style="margin-top:20px"><a class="btn alt" href="#" data-contact>এখনই অর্ডার করুন</a></p></div><div class="steps"><div><b>পছন্দ বেছে নিন</b><span>কালেকশন থেকে ডিজাইন নির্বাচন করুন।</span></div><div><b>রং ও মাপ জানান</b><span>ফোনে আপনার পছন্দ ও সাইজ জানান।</span></div><div><b>আমরা হাতে বানাই</b><span>যত্ন নিয়ে তৈরি করে সারা বাংলাদেশে পাঠাই।</span></div></div></div></div></section>
-<section class="sec" id="story"><div class="wrap"><div class="story"><img src="assets/images/colorful-crochet-knit.jpg" alt="রঙিন হাতে বোনা ক্রোশে নিটওয়্যার"><div><h2>Every stitch, with care</h2><p>ELSHA বিশ্বাস করে, সুন্দর পোশাক শুধু ট্রেন্ড নয়—এটি যত্ন আর ভালোবাসার প্রকাশ। ছোটদের আরামদায়ক ক্রোশে পোশাক থেকে শুরু করে প্রতিটি হ্যান্ডমেড ডিজাইনে আমরা রাখি নিখুঁত বুনন।</p></div></div><div class="trust"><div><b>Nationwide delivery</b><span>বাংলাদেশের সর্বত্র ডেলিভারি</span></div><div><b>Made to order</b><span>আপনার পছন্দ অনুযায়ী কাস্টমাইজ</span></div><div><b>Made with care</b><span>যত্নে তৈরি, ভালোবাসায় বাছাই</span></div></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="wrap footer-inner">
@@ -332,10 +348,10 @@ const fallbackProducts=[
 {name:'Multicolour Granny Square Sweater',image_url:'assets/images/colorful-crochet-knit.jpg',subtitle:'Multicolour · One of a kind',description:'রঙিন গ্র্যানি স্কয়ার প্যাটার্নে বোনা ক্রোশে সোয়েটার—প্রতিটি আলাদা ও বিশেষ।',features:['রঙিন গ্র্যানি স্কয়ার বুনন','প্রতিটি পিস আলাদাভাবে তৈরি','রঙের কম্বিনেশন আপনার পছন্দে'],category:'বাচ্চাদের সোয়েটার'}
 ];
 let products=[];
-let activeCategory='all', searchTerm='', sortMode='featured';
+let activeCategory='all', activeSubcategory='all', searchTerm='', sortMode='featured';
 const root=document.getElementById('collectionSections'),pd=document.getElementById('pd'),ct=document.getElementById('ct');
 function priceNumber(value){const n=Number(asciiDigits(value).replace(/[^0-9.]/g,''));return Number.isFinite(n)?n:0}
-function productMatches(p){const q=searchTerm.trim().toLocaleLowerCase();return (!q||[p.n,p.t,p.d,p.category,p.subCategory].join(' ').toLocaleLowerCase().includes(q))&&(activeCategory==='all'||p.section===activeCategory)}
+function productMatches(p){const q=searchTerm.trim().toLocaleLowerCase();return (!q||[p.n,p.t,p.d,p.category,p.subCategory].join(' ').toLocaleLowerCase().includes(q))&&(activeCategory==='all'||p.section===activeCategory)&&(activeSubcategory==='all'||p.subCategory===activeSubcategory)}
 function sortedProducts(items){const list=[...items];if(sortMode==='price-low')list.sort((a,b)=>priceNumber(a.price)-priceNumber(b.price));else if(sortMode==='price-high')list.sort((a,b)=>priceNumber(b.price)-priceNumber(a.price));else if(sortMode==='name')list.sort((a,b)=>a.n.localeCompare(b.n,'bn'));return list}
 function updateCollectionCount(count){const el=document.getElementById('collectionCount');if(el)el.textContent=new Intl.NumberFormat('bn-BD').format(count)+'টি পণ্য';}
 function asciiDigits(v){return String(v??'').replace(/[০-৯]/g,d=>'০১২৩৪৫৬৭৮৯'.indexOf(d))}
@@ -369,11 +385,23 @@ document.getElementById('checkoutForm').addEventListener('submit',e=>{e.preventD
 async function loadProducts(){try{const {data,error}=await supabaseClient.from('products').select('*').order('created_at',{ascending:false});if(error)throw error;products=(data||[]).map(normalizeProduct);renderProducts();renderCart();renderWishlist();updateShopCounts()}catch(error){console.error('ELSHA product load error:',error);products=fallbackProducts.map(normalizeProduct);renderProducts();renderCart();renderWishlist();updateShopCounts();const note=document.createElement('p');note.className='section-note';note.textContent='সর্বশেষ পণ্যের তথ্য লোড করা যায়নি; প্রদর্শনী পণ্য দেখানো হচ্ছে।';root.append(note)}}
 document.getElementById('productSearch').addEventListener('input',e=>{searchTerm=e.target.value;renderProducts()});
 document.getElementById('productSort').addEventListener('change',e=>{sortMode=e.target.value;renderProducts()});
+function updateAccessoryFilters(){
+  const panel=document.getElementById('accessorySubcategoryPills');
+  if(panel)panel.classList.toggle('visible',activeCategory==='acc');
+}
 document.querySelectorAll('[data-category]').forEach(button=>button.addEventListener('click',()=>{
-  activeCategory=button.dataset.category;
+  activeCategory=button.dataset.category;activeSubcategory='all';
   document.querySelectorAll('[data-category]').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
-  renderProducts();
+  document.querySelectorAll('[data-subcategory]').forEach(item=>{const active=item.dataset.subcategory==='all';item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+  updateAccessoryFilters();renderProducts();
 }));
+document.querySelectorAll('[data-subcategory]').forEach(button=>button.addEventListener('click',()=>{
+  activeCategory='acc';activeSubcategory=button.dataset.subcategory;
+  document.querySelectorAll('[data-category]').forEach(item=>{const active=item.dataset.category==='acc';item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+  document.querySelectorAll('[data-subcategory]').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+  updateAccessoryFilters();renderProducts();
+}));
+updateAccessoryFilters();
 document.getElementById('openCart').addEventListener('click',openCart);
 document.getElementById('openWishlist').addEventListener('click',openWishlist);
 document.getElementById('addToCart').addEventListener('click',()=>{if(!selectedProduct)return;addToCart(selectedProduct);pd.close();openCart()});
