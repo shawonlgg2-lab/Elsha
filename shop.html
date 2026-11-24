@@ -248,6 +248,15 @@ dialog{border-radius:14px}
 .cod-policy-actions .btn:disabled{opacity:.45;cursor:not-allowed}
 @media(max-width:480px){.cod-policy-card{padding:25px 19px 21px}.cod-policy-card h3{font-size:20px}.cod-policy-actions{grid-template-columns:1fr}.cod-policy-actions .btn{width:100%}}
 
+
+/* Home-page featured collections, mirrored on Shop */
+.featured-collection{padding:34px 0 18px}
+.featured-collection[hidden]{display:none!important}
+.featured-collection .section-heading{margin-bottom:18px}
+.featured-collection .featured-kicker{display:block;color:#A78342;font-size:11px;font-weight:700;letter-spacing:.2em;margin-bottom:6px}
+.featured-collection .featured-empty{color:var(--soft);font-size:14px}
+@media(max-width:780px){.featured-collection{padding:24px 0 10px}}
+
 </style>
 </head>
 <body>
@@ -271,6 +280,24 @@ dialog{border-radius:14px}
 </header>
 <main id="top">
 <section class="shop-intro wrap"><span class="eyebrow">THE ELSHA EDIT</span><h1>Shop Handmade Collection</h1><p>আপনার পছন্দের হাতে বোনা পোশাক ও অ্যাক্সেসরিজ খুঁজে নিন—প্রতিটি ডিজাইন তৈরি হয় যত্ন ও ভালোবাসায়।</p></section>
+
+<section class="featured-collection" id="shopNewArrivals" hidden>
+  <div class="wrap">
+    <div class="section-heading">
+      <div><span class="featured-kicker">JUST ARRIVED</span><h2>New Arrivals</h2><p class="sub">ELSHA-র নতুন সংযোজনগুলো এক নজরে দেখে নিন।</p></div>
+    </div>
+    <div class="grid" id="shopNewArrivalsGrid"></div>
+  </div>
+</section>
+<section class="featured-collection" id="shopUpcomingProducts" hidden>
+  <div class="wrap">
+    <div class="section-heading">
+      <div><span class="featured-kicker">COMING SOON</span><h2>Upcoming Products</h2><p class="sub">শিগগিরই আসছে ELSHA-র নতুন ডিজাইনগুলো।</p></div>
+    </div>
+    <div class="grid" id="shopUpcomingProductsGrid"></div>
+  </div>
+</section>
+
 <section class="sec collection-sec" id="collection">
   <div class="wrap">
     <div class="section-heading">
@@ -403,8 +430,30 @@ function asciiDigits(v){return String(v??'').replace(/[০-৯]/g,d=>'০১২�
 function formatBDT(v){const n=Number(asciiDigits(v).replace(/[^0-9.]/g,''));return Number.isFinite(n)&&n>0?'৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(n):''}
 function groupOf(category,name=''){const c=String(category||'').toLowerCase(),n=String(name||'').toLowerCase();if(/অ্যাক্সেসরিজ|অ্যাক্সেসরি|accessor|ক্লিপ|জুতা|ব্যাগ|clip|shoe|bag|টুপি|স্কার্ফ|cap|scarf|beanie/.test(c))return'acc';if(/ড্রেস|ফ্রক|dress|frock/.test(c))return'dress';if(/সোয়েটার|সোয়েটার|কার্ডিগান|হুডি|বাচ্চা|sweater|cardigan|hoodie|kids|set|সেট/.test(c))return'kids';if(/dress|frock/.test(n))return'dress';if(/clip|shoe|bag|accessor|টুপি|ক্লিপ|জুতা|ব্যাগ/.test(n))return'acc';return'kids'}
 function accessoryType(category,name=''){const v=(String(category||'')+' '+String(name||'')).toLowerCase();if(/মাথার ক্লিপ|ক্লিপ|hair.?clip|hair.?clasp|clip/.test(v))return'মাথার ক্লিপ';if(/বাচ্চাদের জুতা|জুতা|shoe|sandal/.test(v))return'বাচ্চাদের জুতা';if(/হ্যান্ডব্যাগ|হ্যান্ড ব্যাগ|ব্যাগ|hand.?bag|purse/.test(v))return'হ্যান্ডব্যাগ';return'অন্যান্য'}
-function normalizeProduct(r){return{id:r.id,n:r.name||'নাম নেই',i:r.image_url||'',t:r.subtitle||'',d:r.description||'',f:Array.isArray(r.features)?r.features:typeof r.features==='string'?r.features.split(/\r?\n/).filter(Boolean):[],price:r.price??'',stock:Number(r.stock_qty??0),category:r.category||'',section:groupOf(r.category,r.name),subCategory:groupOf(r.category,r.name)==='acc'?accessoryType(r.category,r.name):'',visible:r.is_visible!==false&&r.is_active!==false}}
+function normalizeProduct(r){return{id:r.id,n:r.name||'নাম নেই',i:r.image_url||'',t:r.subtitle||'',d:r.description||'',f:Array.isArray(r.features)?r.features:typeof r.features==='string'?r.features.split(/\r?\n/).filter(Boolean):[],price:r.price??'',stock:Number(r.stock_qty??0),category:r.category||'',section:groupOf(r.category,r.name),subCategory:groupOf(r.category,r.name)==='acc'?accessoryType(r.category,r.name):'',isNewArrival:r.is_new_arrival===true,newArrivalOrder:Number(r.new_arrival_order??0),isUpcoming:r.is_upcoming===true,upcomingOrder:Number(r.upcoming_order??0),visible:r.is_visible!==false&&r.is_active!==false}}
 function makeImage(src,name){if(src){const img=document.createElement('img');img.src=src;img.alt=name;img.loading='lazy';img.onerror=()=>{const f=document.createElement('div');f.className='fallback';f.textContent='ELSHA';img.replaceWith(f)};return img}const f=document.createElement('div');f.className='fallback';f.textContent='ELSHA';return f}
+function renderFeaturedCollection(sectionId,gridId,flag,orderField){
+ const section=document.getElementById(sectionId),grid=document.getElementById(gridId);
+ if(!section||!grid)return;
+ const items=products.filter(p=>p.visible&&p[flag]).sort((a,b)=>(Number(a[orderField])||0)-(Number(b[orderField])||0));
+ grid.replaceChildren();
+ section.hidden=items.length===0;
+ items.forEach(p=>{
+  const card=document.createElement('button');card.className='card';card.type='button';
+  card.append(makeImage(p.i,p.n));
+  const body=document.createElement('div');body.className='b';
+  const title=document.createElement('h3');title.textContent=p.n;body.append(title);
+  const tag=document.createElement('div');tag.className='tag';tag.textContent=p.t||p.category||'হাতে তৈরি ELSHA পণ্য';body.append(tag);
+  const price=formatBDT(p.price);
+  if(price){const priceEl=document.createElement('div');priceEl.className='product-price';priceEl.textContent=price;body.append(priceEl)}
+  const more=document.createElement('span');more.className='more';more.textContent='বিস্তারিত দেখুন';body.append(more);
+  card.append(body);card.addEventListener('click',()=>show(p));grid.append(card);
+ });
+}
+function renderFeaturedCollections(){
+ renderFeaturedCollection('shopNewArrivals','shopNewArrivalsGrid','isNewArrival','newArrivalOrder');
+ renderFeaturedCollection('shopUpcomingProducts','shopUpcomingProductsGrid','isUpcoming','upcomingOrder');
+}
 function renderProducts(){root.replaceChildren();const visible=products.filter(p=>p.visible&&productMatches(p));updateCollectionCount(visible.length);SECTIONS.forEach(section=>{if(activeCategory!=='all'&&activeCategory!==section.key)return;const items=sortedProducts(visible.filter(p=>p.section===section.key));if(!items.length)return;const sectionEl=document.createElement('section');sectionEl.className='category-section';const heading=document.createElement('div');heading.className='category-heading';const title=document.createElement('h3');title.textContent=section.title;const line=document.createElement('span');heading.append(title,line);sectionEl.append(heading);const groups=section.key==='acc'?[{title:'মাথার ক্লিপ',items:items.filter(p=>p.subCategory==='মাথার ক্লিপ')},{title:'বাচ্চাদের জুতা',items:items.filter(p=>p.subCategory==='বাচ্চাদের জুতা')},{title:'হ্যান্ডব্যাগ',items:items.filter(p=>p.subCategory==='হ্যান্ডব্যাগ')},{title:'অন্যান্য',items:items.filter(p=>p.subCategory==='অন্যান্য')}]:[{title:'',items}];groups.forEach(group=>{if(!group.items.length)return;const sub=document.createElement('div');sub.className=section.key==='acc'?'subcategory-section':'';if(group.title){const sh=document.createElement('h4');sh.className='subcategory-heading';sh.textContent=group.title;sub.append(sh)}const grid=document.createElement('div');grid.className='grid';group.items.forEach(p=>{const b=document.createElement('button');b.className='card';b.type='button';b.append(makeImage(p.i,p.n));const body=document.createElement('div');body.className='b';const h=document.createElement('h3');h.textContent=p.n;body.append(h);const tag=document.createElement('div');tag.className='tag';tag.textContent=p.t;body.append(tag);const price=formatBDT(p.price);if(price){const priceEl=document.createElement('div');priceEl.className='product-price';priceEl.textContent=price;body.append(priceEl)}const stock=document.createElement('div');stock.className='tag';stock.textContent=p.stock>0?'স্টকে আছে: '+new Intl.NumberFormat('bn-BD').format(p.stock):'অর্ডার অনুযায়ী তৈরি করা যাবে';body.append(stock);const more=document.createElement('span');more.className='more';more.textContent='বিস্তারিত দেখুন';body.append(more);b.append(body);b.addEventListener('click',()=>show(p));grid.append(b)});sub.append(grid);sectionEl.append(sub)});root.append(sectionEl)});if(!visible.length){const msg=document.createElement('p');msg.className='empty-category';msg.textContent=searchTerm?'আপনার খোঁজের সঙ্গে মেলে এমন কোনো পণ্য পাওয়া যায়নি।':'এই মুহূর্তে কোনো পণ্য দেখানোর জন্য নেই।';root.append(msg)}}
 let selectedProduct=null;
 let checkoutMode='single';
@@ -441,7 +490,7 @@ codPolicyDlg.addEventListener('cancel',()=>{if(!codPolicyAccepted&&codRadio)codR
 codPolicyDlg.addEventListener('close',()=>{if(!codPolicyAccepted&&codRadio)codRadio.checked=false;updatePaymentFields();});
 
 document.getElementById('checkoutForm').addEventListener('submit',e=>{e.preventDefault();const method=document.querySelector('input[name="paymentMethod"]:checked')?.value;if(!method){alert('পেমেন্ট পদ্ধতি নির্বাচন করুন।');return}if(method==='Cash on Delivery'&&!codPolicyAccepted){alert('ক্যাশ অন ডেলিভারির শর্তে সম্মতি দিতে হবে।');if(codRadio){codRadio.checked=true;resetCodPolicy();codPolicyDlg.showModal()}return}const orderProducts=checkoutMode==='cart'?cartItems.map(item=>({p:findProduct(item.key),qty:Number(item.qty)||1})).filter(x=>x.p):selectedProduct?[{p:selectedProduct,qty:1}]:[];if(!orderProducts.length){alert('অর্ডারের জন্য কোনো পণ্য পাওয়া যায়নি।');return}const total=orderProducts.reduce((sum,x)=>sum+priceNumber(x.p.price)*x.qty,0);const lines=['ELSHA নতুন অর্ডার',...orderProducts.map(x=>'পণ্য: '+x.p.n+' × '+x.qty+' — '+(formatBDT(priceNumber(x.p.price)*x.qty)||'দাম নিশ্চিত করতে হবে')),'সর্বমোট: '+(total>0?'৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(total):'দাম নিশ্চিত করতে হবে'),'নাম: '+document.getElementById('buyerName').value.trim(),'মোবাইল: '+document.getElementById('buyerPhone').value.trim(),'ঠিকানা: '+document.getElementById('buyerAddress').value.trim(),'পেমেন্ট পদ্ধতি: '+method];if(method==='Cash on Delivery'){lines.push('ক্যাশ অন ডেলিভারি নীতিমালায় সম্মতি: হ্যাঁ')}if(method==='Cash on Delivery'&&total>0){lines.push('অগ্রিম (৬০%): ৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(total*.6));lines.push('ডেলিভারির সময় বাকি (৪০%): ৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(total*.4));lines.push('অগ্রিম পেমেন্টের ব্যবস্থা ELSHA-র সঙ্গে যোগাযোগ করে নিশ্চিত করুন।')}if(method!=='Cash on Delivery'){const sender=document.getElementById('senderPhone').value.trim(),trx=document.getElementById('transactionId').value.trim();if(sender)lines.push('পেমেন্ট পাঠানোর নম্বর: '+sender);if(trx)lines.push('Transaction ID: '+trx)}window.open('https://wa.me/8801621125589?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');document.getElementById('checkoutDlg').close();if(checkoutMode==='cart'){cartItems=[];persistShop();renderCart()}});
-async function loadProducts(){try{const {data,error}=await supabaseClient.from('products').select('*').order('created_at',{ascending:false});if(error)throw error;products=(data||[]).map(normalizeProduct);renderProducts();renderCart();renderWishlist();updateShopCounts()}catch(error){console.error('ELSHA product load error:',error);products=fallbackProducts.map(normalizeProduct);renderProducts();renderCart();renderWishlist();updateShopCounts();const note=document.createElement('p');note.className='section-note';note.textContent='সর্বশেষ পণ্যের তথ্য লোড করা যায়নি; প্রদর্শনী পণ্য দেখানো হচ্ছে।';root.append(note)}}
+async function loadProducts(){try{const {data,error}=await supabaseClient.from('products').select('*').order('created_at',{ascending:false});if(error)throw error;products=(data||[]).map(normalizeProduct);renderFeaturedCollections();renderProducts();renderCart();renderWishlist();updateShopCounts()}catch(error){console.error('ELSHA product load error:',error);products=fallbackProducts.map(normalizeProduct);renderFeaturedCollections();renderProducts();renderCart();renderWishlist();updateShopCounts();const note=document.createElement('p');note.className='section-note';note.textContent='সর্বশেষ পণ্যের তথ্য লোড করা যায়নি; প্রদর্শনী পণ্য দেখানো হচ্ছে।';root.append(note)}}
 document.getElementById('productSearch').addEventListener('input',e=>{searchTerm=e.target.value;renderProducts()});
 document.getElementById('productSort').addEventListener('change',e=>{sortMode=e.target.value;renderProducts()});
 function updateAccessoryFilters(){
