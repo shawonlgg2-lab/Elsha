@@ -217,6 +217,26 @@ dialog{border-radius:14px}
 @media(max-width:780px){.page-intro{padding:34px 16px 18px}.content-panel{margin:16px 12px 32px;padding:22px 18px}}
 
 .hero,.collection-sec,#custom,#story{display:none!important}
+
+.cod-policy-dialog{width:min(560px,calc(100% - 28px));max-width:560px;border:1px solid var(--line);border-radius:20px;padding:0;background:var(--paper);color:var(--ink);box-shadow:0 28px 80px rgba(0,0,0,.32)}
+.cod-policy-dialog::backdrop{background:rgba(18,35,28,.68);backdrop-filter:blur(3px)}
+.cod-policy-card{padding:30px 28px 26px}
+.cod-policy-mark{font-family:var(--serif);font-size:27px;font-weight:700;letter-spacing:.2em;color:var(--ink);text-align:center}
+.cod-policy-kicker{text-align:center;color:#9A783C;font-weight:600;font-size:13px;margin:5px 0 7px}
+.cod-policy-card h3{text-align:center;font-family:var(--sans);font-size:23px;line-height:1.35;margin-bottom:22px}
+.cod-policy-section{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:15px 0;border-top:1px solid var(--line)}
+.cod-policy-number{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#F3EBDD;color:#8B6B32;font-weight:700}
+.cod-policy-section h4{font-size:16px;margin:0 0 5px}
+.cod-policy-section p{font-size:14px;line-height:1.7;color:var(--soft)}
+.cod-policy-section strong{color:var(--ink)}
+.cod-policy-note{font-size:13px;color:var(--soft);background:#F7F5EF;padding:11px 13px;border-radius:10px;margin:10px 0 14px}
+.cod-policy-check{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.55;cursor:pointer}
+.cod-policy-check input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--blue)}
+.cod-policy-actions{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;margin-top:18px}
+.cod-policy-actions .btn{font-size:14px;padding:11px 12px}
+.cod-policy-actions .btn:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:480px){.cod-policy-card{padding:25px 19px 21px}.cod-policy-card h3{font-size:20px}.cod-policy-actions{grid-template-columns:1fr}.cod-policy-actions .btn{width:100%}}
+
 </style>
 </head>
 <body>
@@ -309,7 +329,7 @@ dialog{border-radius:14px}
 <label class="pay-choice"><input type="radio" name="paymentMethod" value="bKash" required><span class="pay-logo pay-bkash">bKash</span><span>bKash</span></label>
 <label class="pay-choice"><input type="radio" name="paymentMethod" value="Nagad"><span class="pay-logo pay-nagad">Nagad</span><span>Nagad</span></label>
 <label class="pay-choice"><input type="radio" name="paymentMethod" value="Rocket"><span class="pay-logo pay-rocket">Rocket</span><span>Rocket</span></label>
-<label class="pay-choice"><input type="radio" name="paymentMethod" value="Cash on Delivery"><span class="pay-logo pay-cod">COD</span><span>Cash on Delivery</span></label>
+<label class="pay-choice"><input type="radio" name="paymentMethod" value="Cash on Delivery"><span class="pay-logo pay-cod">COD</span><span>ক্যাশ অন ডেলিভারি</span></label>
 </div>
 <div id="walletFields" hidden><div class="pay-instruction" id="walletInstruction">মোবাইল ব্যাংকিং নম্বর ও পেমেন্ট নির্দেশনা WhatsApp-এ নিশ্চিত করা হবে।</div>
 <label for="senderPhone">যে নম্বর থেকে টাকা পাঠাবেন</label><input id="senderPhone" inputmode="tel" placeholder="আপনার বিকাশ/নগদ/রকেট নম্বর">
@@ -318,6 +338,31 @@ dialog{border-radius:14px}
 <p class="subnote">অর্ডার নিশ্চিত করতে WhatsApp-এ আপনার তথ্য ও নির্বাচিত পেমেন্ট পদ্ধতি পাঠানো হবে।</p>
 <div class="checkout-actions"><button class="btn" type="submit">WhatsApp-এ অর্ডার নিশ্চিত করুন</button><button class="btn line" type="button" data-close>বাতিল</button></div>
 </form></dialog>
+
+<dialog id="codPolicyDlg" class="cod-policy-dialog" aria-labelledby="codPolicyTitle">
+  <div class="cod-policy-card">
+    <div class="cod-policy-mark">ELSHA</div>
+    <p class="cod-policy-kicker">গুরুত্বপূর্ণ অর্ডার নীতিমালা</p>
+    <h3 id="codPolicyTitle">ক্যাশ অন ডেলিভারি অর্ডারের আগে</h3>
+    <div class="cod-policy-section">
+      <span class="cod-policy-number">০১</span>
+      <div><h4>পণ্য তৈরি ও ডেলিভারির সময়</h4>
+      <p>আমাদের প্রতিটি পণ্য যত্নসহকারে হাতে তৈরি করা হয়। অর্ডার নিশ্চিত হওয়ার পর পণ্য তৈরি ও ডেলিভারি সম্পন্ন করতে <strong>কমপক্ষে ১৪ দিন (২ সপ্তাহ)</strong> সময় লাগবে।</p></div>
+    </div>
+    <div class="cod-policy-section">
+      <span class="cod-policy-number">০২</span>
+      <div><h4>ক্যাশ অন ডেলিভারিতে অগ্রিম পেমেন্ট</h4>
+      <p>ক্যাশ অন ডেলিভারিতে অর্ডার নিশ্চিত করতে মোট অর্ডার মূল্যের <strong>৬০% অগ্রিম পরিশোধ</strong> করতে হবে। বাকি <strong>৪০% পণ্য হাতে পাওয়ার সময়</strong> পরিশোধ করবেন।</p></div>
+    </div>
+    <p class="cod-policy-note">অনুগ্রহ করে শর্তগুলো ভালোভাবে পড়ে সম্মতি দিয়ে অর্ডার প্রক্রিয়া চালিয়ে যান।</p>
+    <label class="cod-policy-check"><input type="checkbox" id="codPolicyAgreeCheck"><span>আমি ডেলিভারির সময়সীমা ও ৬০% অগ্রিম পেমেন্টের শর্ত পড়েছি এবং সম্মত আছি।</span></label>
+    <div class="cod-policy-actions">
+      <button type="button" class="btn alt" id="codPolicyAgree" disabled>সম্মতি দিচ্ছি ও এগিয়ে যান</button>
+      <button type="button" class="btn line" id="codPolicyCancel">সম্মত নই</button>
+    </div>
+  </div>
+</dialog>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 'use strict';
@@ -363,10 +408,24 @@ function renderWishlist(){const list=document.getElementById('wishlistList');if(
 function openCart(){renderCart();document.getElementById('cartDlg').showModal()}
 function openWishlist(){renderWishlist();document.getElementById('wishlistDlg').showModal()}
 function show(p){selectedProduct=p;const fullLink=document.getElementById('fullProductPage');if(fullLink)fullLink.href='product.html?id='+encodeURIComponent(productKey(p));const img=document.getElementById('pi');img.src=p.i||'';img.alt=p.n;img.onerror=()=>{img.removeAttribute('src')};document.getElementById('pn').textContent=p.n;document.getElementById('pdsc').textContent=p.d||'হাতে তৈরি ELSHA ক্রোশে পণ্য। কাস্টম রং ও মাপ জানতে WhatsApp-এ যোগাযোগ করুন।';document.getElementById('addToWishlist').textContent=wishlistKeys.includes(productKey(p))?'♥ পছন্দে রাখা হয়েছে':'♡ পছন্দে রাখুন';const ul=document.getElementById('pf');ul.replaceChildren();p.f.forEach(x=>{const li=document.createElement('li');li.textContent=x;ul.append(li)});const price=formatBDT(p.price);if(price){const li=document.createElement('li');li.textContent='দাম: '+price;ul.append(li)}const stockLi=document.createElement('li');stockLi.textContent=p.stock>0?'স্টকে আছে: '+p.stock:'প্রস্তুত স্টক নেই; অর্ডার অনুযায়ী তৈরি করা যাবে';ul.append(stockLi);pd.showModal();requestAnimationFrame(()=>pd.scrollTo({top:0,behavior:'instant'}))}
-function openCheckout(){if(!selectedProduct)return;checkoutMode='single';document.getElementById('checkoutProduct').textContent=selectedProduct.n+' · '+(formatBDT(selectedProduct.price)||'দাম WhatsApp-এ নিশ্চিত করুন');pd.close();const form=document.getElementById('checkoutForm');form.reset();document.getElementById('walletFields').hidden=true;document.getElementById('checkoutDlg').showModal();requestAnimationFrame(()=>document.getElementById('checkoutDlg').scrollTo({top:0,behavior:'instant'}))}
-function updatePaymentFields(){const method=document.querySelector('input[name="paymentMethod"]:checked')?.value;document.getElementById('walletFields').hidden=method==='Cash on Delivery'||!method;document.getElementById('walletInstruction').textContent=method==='Cash on Delivery'?'পণ্য হাতে পাওয়ার পর ডেলিভারির সময় নগদ টাকা পরিশোধ করুন।':method+' পেমেন্টের নম্বর ও নির্দেশনা অর্ডার WhatsApp-এ পাঠানোর পর নিশ্চিত করা হবে।'}
+function openCheckout(){if(!selectedProduct)return;checkoutMode='single';document.getElementById('checkoutProduct').textContent=selectedProduct.n+' · '+(formatBDT(selectedProduct.price)||'দাম WhatsApp-এ নিশ্চিত করুন');pd.close();const form=document.getElementById('checkoutForm');form.reset();resetCodPolicy();document.getElementById('walletFields').hidden=true;document.getElementById('checkoutDlg').showModal();requestAnimationFrame(()=>document.getElementById('checkoutDlg').scrollTo({top:0,behavior:'instant'}))}
+function updatePaymentFields(){const method=document.querySelector('input[name="paymentMethod"]:checked')?.value;document.getElementById('walletFields').hidden=method==='Cash on Delivery'||!method;document.getElementById('walletInstruction').textContent=method==='Cash on Delivery'?'ক্যাশ অন ডেলিভারিতে মোট অর্ডার মূল্যের ৬০% অগ্রিম এবং বাকি ৪০% পণ্য হাতে পাওয়ার সময় পরিশোধ করতে হবে।':method+' পেমেন্টের নম্বর ও নির্দেশনা অর্ডার WhatsApp-এ পাঠানোর পর নিশ্চিত করা হবে।'}
 document.querySelectorAll('input[name="paymentMethod"]').forEach(el=>el.addEventListener('change',updatePaymentFields));
-document.getElementById('checkoutForm').addEventListener('submit',e=>{e.preventDefault();const method=document.querySelector('input[name="paymentMethod"]:checked')?.value;if(!method){alert('পেমেন্ট পদ্ধতি নির্বাচন করুন।');return}const orderProducts=checkoutMode==='cart'?cartItems.map(item=>({p:findProduct(item.key),qty:Number(item.qty)||1})).filter(x=>x.p):selectedProduct?[{p:selectedProduct,qty:1}]:[];if(!orderProducts.length){alert('অর্ডারের জন্য কোনো পণ্য পাওয়া যায়নি।');return}const total=orderProducts.reduce((sum,x)=>sum+priceNumber(x.p.price)*x.qty,0);const lines=['ELSHA নতুন অর্ডার',...orderProducts.map(x=>'পণ্য: '+x.p.n+' × '+x.qty+' — '+(formatBDT(priceNumber(x.p.price)*x.qty)||'দাম নিশ্চিত করতে হবে')),'সর্বমোট: '+(total>0?'৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(total):'দাম নিশ্চিত করতে হবে'),'নাম: '+document.getElementById('buyerName').value.trim(),'মোবাইল: '+document.getElementById('buyerPhone').value.trim(),'ঠিকানা: '+document.getElementById('buyerAddress').value.trim(),'পেমেন্ট পদ্ধতি: '+method];if(method!=='Cash on Delivery'){const sender=document.getElementById('senderPhone').value.trim(),trx=document.getElementById('transactionId').value.trim();if(sender)lines.push('পেমেন্ট পাঠানোর নম্বর: '+sender);if(trx)lines.push('Transaction ID: '+trx)}window.open('https://wa.me/8801621125589?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');document.getElementById('checkoutDlg').close();if(checkoutMode==='cart'){cartItems=[];persistShop();renderCart()}});
+let codPolicyAccepted=false;
+const codPolicyDlg=document.getElementById('codPolicyDlg');
+const codPolicyCheck=document.getElementById('codPolicyAgreeCheck');
+const codPolicyAgree=document.getElementById('codPolicyAgree');
+const codPolicyCancel=document.getElementById('codPolicyCancel');
+const codRadio=document.querySelector('input[name="paymentMethod"][value="Cash on Delivery"]');
+function resetCodPolicy(){codPolicyAccepted=false;codPolicyCheck.checked=false;codPolicyAgree.disabled=true;}
+codPolicyCheck.addEventListener('change',()=>{codPolicyAgree.disabled=!codPolicyCheck.checked;});
+codPolicyAgree.addEventListener('click',()=>{if(!codPolicyCheck.checked)return;codPolicyAccepted=true;codPolicyDlg.close();});
+codPolicyCancel.addEventListener('click',()=>{if(codRadio)codRadio.checked=false;resetCodPolicy();codPolicyDlg.close();updatePaymentFields();});
+codRadio.addEventListener('change',()=>{if(codRadio.checked&&!codPolicyAccepted){resetCodPolicy();codPolicyDlg.showModal();}});
+codPolicyDlg.addEventListener('cancel',()=>{if(!codPolicyAccepted&&codRadio)codRadio.checked=false;});
+codPolicyDlg.addEventListener('close',()=>{if(!codPolicyAccepted&&codRadio)codRadio.checked=false;updatePaymentFields();});
+
+document.getElementById('checkoutForm').addEventListener('submit',e=>{e.preventDefault();const method=document.querySelector('input[name="paymentMethod"]:checked')?.value;if(!method){alert('পেমেন্ট পদ্ধতি নির্বাচন করুন।');return}if(method==='Cash on Delivery'&&!codPolicyAccepted){alert('ক্যাশ অন ডেলিভারির শর্তে সম্মতি দিতে হবে।');if(codRadio){codRadio.checked=true;resetCodPolicy();codPolicyDlg.showModal()}return}const orderProducts=checkoutMode==='cart'?cartItems.map(item=>({p:findProduct(item.key),qty:Number(item.qty)||1})).filter(x=>x.p):selectedProduct?[{p:selectedProduct,qty:1}]:[];if(!orderProducts.length){alert('অর্ডারের জন্য কোনো পণ্য পাওয়া যায়নি।');return}const total=orderProducts.reduce((sum,x)=>sum+priceNumber(x.p.price)*x.qty,0);const lines=['ELSHA নতুন অর্ডার',...orderProducts.map(x=>'পণ্য: '+x.p.n+' × '+x.qty+' — '+(formatBDT(priceNumber(x.p.price)*x.qty)||'দাম নিশ্চিত করতে হবে')),'সর্বমোট: '+(total>0?'৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(total):'দাম নিশ্চিত করতে হবে'),'নাম: '+document.getElementById('buyerName').value.trim(),'মোবাইল: '+document.getElementById('buyerPhone').value.trim(),'ঠিকানা: '+document.getElementById('buyerAddress').value.trim(),'পেমেন্ট পদ্ধতি: '+method];if(method==='Cash on Delivery'){lines.push('ক্যাশ অন ডেলিভারি নীতিমালায় সম্মতি: হ্যাঁ')}if(method==='Cash on Delivery'&&total>0){lines.push('অগ্রিম (৬০%): ৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(total*.6));lines.push('ডেলিভারির সময় বাকি (৪০%): ৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(total*.4));lines.push('অগ্রিম পেমেন্টের ব্যবস্থা ELSHA-র সঙ্গে যোগাযোগ করে নিশ্চিত করুন।')}if(method!=='Cash on Delivery'){const sender=document.getElementById('senderPhone').value.trim(),trx=document.getElementById('transactionId').value.trim();if(sender)lines.push('পেমেন্ট পাঠানোর নম্বর: '+sender);if(trx)lines.push('Transaction ID: '+trx)}window.open('https://wa.me/8801621125589?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');document.getElementById('checkoutDlg').close();if(checkoutMode==='cart'){cartItems=[];persistShop();renderCart()}});
 async function loadProducts(){try{const {data,error}=await supabaseClient.from('products').select('*').order('created_at',{ascending:false});if(error)throw error;products=(data||[]).map(normalizeProduct);renderProducts();renderCart();renderWishlist();updateShopCounts()}catch(error){console.error('ELSHA product load error:',error);products=fallbackProducts.map(normalizeProduct);renderProducts();renderCart();renderWishlist();updateShopCounts();const note=document.createElement('p');note.className='section-note';note.textContent='সর্বশেষ পণ্যের তথ্য লোড করা যায়নি; প্রদর্শনী পণ্য দেখানো হচ্ছে।';root.append(note)}}
 document.getElementById('productSearch').addEventListener('input',e=>{searchTerm=e.target.value;renderProducts()});
 document.getElementById('productSort').addEventListener('change',e=>{sortMode=e.target.value;renderProducts()});
@@ -379,7 +438,7 @@ document.getElementById('openCart').addEventListener('click',openCart);
 document.getElementById('openWishlist').addEventListener('click',openWishlist);
 document.getElementById('addToCart').addEventListener('click',()=>{if(!selectedProduct)return;addToCart(selectedProduct);pd.close();openCart()});
 document.getElementById('addToWishlist').addEventListener('click',()=>{if(selectedProduct)toggleWishlist(selectedProduct)});
-document.getElementById('cartCheckout').addEventListener('click',()=>{if(!cartItems.length){alert('আপনার কার্ট খালি।');return}checkoutMode='cart';selectedProduct=findProduct(cartItems[0].key);document.getElementById('checkoutProduct').textContent=cartItems.length+'টি পণ্য · '+document.getElementById('cartTotal').textContent+' · কার্ট অর্ডার';document.getElementById('checkoutForm').reset();document.getElementById('walletFields').hidden=true;document.getElementById('cartDlg').close();document.getElementById('checkoutDlg').showModal()});
+document.getElementById('cartCheckout').addEventListener('click',()=>{if(!cartItems.length){alert('আপনার কার্ট খালি।');return}checkoutMode='cart';selectedProduct=findProduct(cartItems[0].key);document.getElementById('checkoutProduct').textContent=cartItems.length+'টি পণ্য · '+document.getElementById('cartTotal').textContent+' · কার্ট অর্ডার';document.getElementById('checkoutForm').reset();resetCodPolicy();document.getElementById('walletFields').hidden=true;document.getElementById('cartDlg').close();document.getElementById('checkoutDlg').showModal()});
 document.getElementById('pwa').addEventListener('click',openCheckout);
 document.addEventListener('click',e=>{const c=e.target.closest('[data-contact]');if(c){e.preventDefault();if(pd.open)pd.close();if(document.getElementById('checkoutDlg').open)document.getElementById('checkoutDlg').close();ct.showModal();return}if(e.target.closest('[data-close]')){e.target.closest('dialog').close();return}if(e.target.tagName==='DIALOG')e.target.close()});
 updateShopCounts();
