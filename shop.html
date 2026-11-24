@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ELSHA Shop — Handmade Crochet Collection</title>
+<meta name="description" content="ELSHA Shop: হাতে তৈরি ক্রোশে পোশাক ও অ্যাক্সেসরিজের সম্পূর্ণ কালেকশন।">
+<meta property="og:title" content="ELSHA — Handmade Crochet, Made Just for You">
+<meta property="og:description" content="হাতে তৈরি ক্রোশে পোশাক ও অ্যাক্সেসরিজ। আপনার পছন্দ অনুযায়ী কাস্টমাইজ করে বানানো।">
+<meta property="og:image" content="https://shawonlgg2-lab.github.io/Elsha/assets/images/elsha-logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/images/elsha-mark.png">
+<link rel="apple-touch-icon" href="assets/images/elsha-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F5EF;--paper:#FFFFFF;--ink:#203D32;--soft:#68766D;--blue:#315D49;--mustard:#C9A45C;--line:#E5E0D4;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Hind Siliguri",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}:focus-visible{outline:3px solid var(--mustard);outline-offset:2px}.wrap{max-width:1120px;margin:0 auto;padding:0 20px}.top{background:var(--ink);color:#fff;font-size:14px;text-align:center;padding:8px 12px}header{position:sticky;top:0;z-index:20;background:rgba(238,243,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;height:64px}.logo{font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:.14em}
+.logo{display:flex;align-items:center;gap:10px}
+.brand-mark{width:46px;height:46px;object-fit:cover;border-radius:50%;border:1px solid rgba(227,169,47,.55);flex:none}
+footer .logo{display:inline-flex;align-items:center;justify-content:center;color:#fff;margin-bottom:10px}
+footer .brand-mark{width:42px;height:42px}
+@media(max-width:780px){.brand-mark{width:40px;height:40px}footer .brand-mark{width:38px;height:38px}}
+nav{display:flex;gap:26px;align-items:center;font-weight:500}nav a:hover{color:var(--blue)}.btn{display:inline-block;border:0;cursor:pointer;font:600 16px var(--sans);background:var(--ink);color:#fff;padding:12px 26px;border-radius:999px;transition:background .2s}.btn:hover{background:var(--blue)}.btn.alt{background:var(--mustard);color:var(--ink)}.btn.alt:hover{background:#efbb4d}.btn.line{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:56px 20px 48px}.hero h1{font-family:var(--serif);font-size:clamp(44px,6.5vw,76px);line-height:1.02;font-weight:600;margin-bottom:18px}.hero p{color:var(--soft);font-size:18px;max-width:30em;margin-bottom:28px}.hero .cta{display:flex;gap:12px;flex-wrap:wrap}.hero figure{position:relative}.hero figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:220px 220px 16px 16px;border:8px solid var(--paper)}.hero figcaption{position:absolute;left:-14px;bottom:28px;background:var(--mustard);padding:10px 18px;border-radius:999px;font-weight:600;font-size:15px}h2{font-family:var(--serif);font-size:clamp(34px,4.4vw,48px);font-weight:600;line-height:1.1}.sec{padding:56px 0}.sec>.wrap>p.sub{color:var(--soft);margin:8px 0 32px;max-width:36em}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}.card{background:var(--paper);border-radius:14px;overflow:hidden;cursor:pointer;border:1px solid var(--line);text-align:left;font:inherit;color:inherit;padding:0;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(31,44,69,.12)}.card img{width:100%;aspect-ratio:1/1;object-fit:cover}.card .b{padding:16px 18px 20px}.card h3{font-family:var(--serif);font-size:23px;line-height:1.2;margin-bottom:6px}.card .tag{font-size:14px;color:var(--soft)}.card .more{display:inline-block;margin-top:10px;font-weight:600;color:var(--blue)}.custom{background:var(--ink);color:#fff;border-radius:20px;padding:44px 36px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}.custom h2{color:#fff}.custom p{color:#C9D3E3}.steps{display:grid;gap:14px}.steps div{border-left:3px solid var(--mustard);padding-left:14px}.steps b{display:block}.steps span{color:#C9D3E3;font-size:15px}.story{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}.story img{border-radius:16px;width:100%}.story p{color:var(--soft);margin-top:14px;font-size:17px}.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}.trust div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px}.trust b{font-family:var(--serif);font-size:21px;display:block}.trust span{color:var(--soft);font-size:15px}footer{background:var(--ink);color:#C9D3E3;padding:36px 0;margin-top:40px;text-align:center;font-size:15px}footer .logo{color:#fff;display:block;margin-bottom:8px}dialog{position:fixed;inset:0;margin:auto;border:0;border-radius:18px;padding:0;max-width:880px;width:calc(100% - 28px);max-height:calc(100dvh - 24px);overflow:auto;background:var(--paper);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.35);overscroll-behavior:contain}dialog[open]{display:block}body:has(dialog[open]){overflow:hidden}dialog::backdrop{background:rgba(20,30,50,.6)}.x{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:50%;border:0;background:var(--paper);font-size:24px;cursor:pointer;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.2)}.pd{display:grid;grid-template-columns:1fr 1fr;position:relative}.pd img{width:100%;height:100%;object-fit:cover;min-height:320px}.pd .t{padding:36px 30px}.pd h3{font-family:var(--serif);font-size:32px;line-height:1.1;margin-bottom:10px}.pd p{color:var(--soft)}.pd ul{margin:16px 0 22px;padding-left:20px}.pd li{margin-bottom:4px}.pd .btns{display:flex;gap:10px;flex-wrap:wrap}.ct{padding:40px 32px;position:relative;text-align:center}.ct h3{font-family:var(--serif);font-size:34px;margin-bottom:6px}.ct .row{margin:20px 0;padding:16px;border:1px solid var(--line);border-radius:12px}.ct .row small{display:block;color:var(--soft)}.ct .row a,.ct .row b{font-size:22px;font-weight:600}.admin-link{font-size:13px;color:var(--soft);border:1px solid var(--line);padding:6px 12px;border-radius:999px}.admin-link:hover{background:var(--paper);color:var(--ink)}.product-price{font-weight:600;color:var(--blue);margin-top:5px}.card .fallback{width:100%;aspect-ratio:1/1;display:grid;place-items:center;background:linear-gradient(135deg,#e8eef4,#d6e2ee);color:#52657d;font-family:var(--serif);font-size:34px}.category-section{margin:34px 0 48px}.subcategory-section{margin:22px 0 34px;padding-left:14px;border-left:3px solid var(--mustard)}.subcategory-heading{font-family:var(--sans);font-size:20px;font-weight:600;margin:0 0 14px}.pay-methods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}.pay-choice{display:flex;align-items:center;gap:10px;padding:12px;border:1.5px solid var(--line);border-radius:12px;background:#fff;cursor:pointer}.pay-choice:has(input:checked){border-color:var(--blue);background:#f2f6fb}.pay-choice input{accent-color:var(--blue)}.pay-logo{width:76px;height:38px;border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:17px;letter-spacing:-.4px;flex:none}.pay-bkash{background:#E2136E}.pay-nagad{background:#F36F21}.pay-rocket{background:#8C3494}.pay-cod{background:#263B55}.checkout{padding:28px 24px}.checkout h3{font-family:var(--serif);font-size:30px}.checkout label{display:block;font-weight:600;margin:12px 0 5px}.checkout input,.checkout textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font:16px var(--sans);background:#fff;color:var(--ink)}.checkout textarea{min-height:76px;resize:vertical}.pay-instruction{padding:12px;border-radius:10px;background:#f2f6fb;color:var(--ink);font-size:14px;margin:10px 0}.checkout-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.subnote{font-size:13px;color:var(--soft)}.category-heading{display:flex;align-items:center;gap:16px;margin-bottom:18px}.category-heading h3{font-family:var(--serif);font-size:30px;font-weight:600}.category-heading span{height:1px;background:var(--line);flex:1}.empty-category{color:var(--soft);padding:12px 0}.loading{color:var(--soft);padding:22px 0}.section-note{font-size:14px;color:var(--soft);margin-top:4px}@media(max-width:780px){.hero,.custom,.story,.pd{grid-template-columns:1fr}.trust{grid-template-columns:1fr}nav a:not(.btn){display:none}.hero figure{order:-1}.hero figcaption{left:10px}.custom{padding:32px 22px}.pd img{min-height:240px;max-height:320px}.category-heading h3{font-size:26px}}
+/* ELSHA brand logo alignment */
+footer .logo{display:inline-flex;align-items:center;justify-content:center;color:#fff;margin-bottom:10px}
+footer .brand-mark{width:42px;height:42px}
+@media(max-width:780px){footer .brand-mark{width:38px;height:38px}}
+
+
+/* ELSHA footer refinement */
+.site-footer{background:var(--ink);color:#C9D3E3;padding:42px 0 26px;margin-top:40px;text-align:center}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:0}
+.site-footer .footer-logo{display:inline-flex;align-items:center;justify-content:center;gap:11px;color:#fff;margin:0;font-size:34px;letter-spacing:.18em;line-height:1}
+.site-footer .brand-mark{width:54px;height:54px;border:1px solid rgba(227,169,47,.65)}
+.footer-tagline{font-family:var(--serif);font-size:17px;font-style:italic;color:#E3A92F;margin:12px 0 20px}
+.footer-details{display:flex;flex-direction:column;align-items:center;gap:7px;font-size:15px}
+.footer-details a{color:#C9D3E3}
+.footer-details a:hover,.footer-links a:hover{color:#fff}
+.footer-symbol{display:inline-block;color:#E3A92F;margin-right:7px;font-size:17px}
+.footer-links{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:22px}
+.footer-links a{color:#fff;font-size:14px}
+.footer-admin{border:1px solid #65738B;border-radius:999px;padding:7px 15px;transition:background .2s,border-color .2s}
+.footer-admin:hover{background:#30415F;border-color:#E3A92F}
+.footer-divider{width:min(100%,420px);height:1px;background:rgba(201,211,227,.2);margin:24px 0 15px}
+.footer-copy{font-size:13px;color:#AEBBD0;letter-spacing:.02em}
+@media(max-width:780px){
+  .site-footer{padding:34px 0 22px;margin-top:28px}
+  .site-footer .footer-logo{font-size:30px;gap:9px}
+  .site-footer .brand-mark{width:48px;height:48px}
+  .footer-tagline{font-size:16px;margin:10px 0 18px}
+  .footer-details{font-size:14px;gap:8px}
+  .footer-links{gap:10px;margin-top:20px}
+  .footer-copy{font-size:12px}
+}
+
+
+/* ELSHA modern storefront refresh — visual layer only */
+body{background:var(--bg);color:var(--ink)}
+.top{background:#183329;color:#F7F2E7;font-size:12px;letter-spacing:.035em;padding:8px 12px}
+.top span{color:#D5B875;padding:0 8px}
+.main-header{position:sticky;top:0;z-index:30;background:rgba(250,249,245,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 5px 22px rgba(32,61,50,.045)}
+.main-header .nav{height:78px;gap:28px}
+.main-header .logo{font-size:32px;letter-spacing:.19em;color:#203D32;gap:11px}
+.main-header .brand-mark{width:48px;height:48px;border-color:#C9A45C}
+.main-header nav{flex:1;justify-content:center;gap:clamp(14px,2.2vw,30px);font-size:14px}
+.main-header nav a{white-space:nowrap;position:relative}
+.main-header nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:#C9A45C;transition:right .2s}
+.main-header nav a:hover:after{right:0}
+.header-actions{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.header-contact{background:#203D32;color:#fff;border-radius:999px;padding:10px 18px;font-size:13px;font-weight:600}
+.header-contact:hover{background:#315D49;color:#fff}
+.header-admin{font-size:12px;color:var(--soft);border:1px solid var(--line);border-radius:999px;padding:8px 12px}
+.mobile-nav{display:none}
+.hero{max-width:1160px;padding-top:54px;padding-bottom:58px;gap:clamp(28px,5vw,70px)}
+.hero h1{color:#203D32;font-size:clamp(48px,6.2vw,78px);letter-spacing:-.025em}
+.hero p{color:#66756B;line-height:1.85}
+.hero figure img{border:7px solid #fff;border-radius:190px 190px 18px 18px;box-shadow:0 22px 55px rgba(32,61,50,.10)}
+.hero figcaption{background:#D8BD83;color:#203D32;box-shadow:0 6px 20px rgba(32,61,50,.10)}
+.btn{background:#203D32;border-radius:8px;padding:12px 22px}
+.btn:hover{background:#315D49}
+.btn.alt{background:#D8BD83;color:#203D32}
+.btn.alt:hover{background:#E5CC98}
+.btn.line{border-radius:8px;border-color:#A8B5AA;color:#203D32}
+.sec{padding:68px 0}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
+.eyebrow{display:block;color:#A27C3E;font-size:11px;letter-spacing:.22em;font-weight:700;margin-bottom:8px}
+.section-heading h2{font-size:clamp(36px,4.4vw,52px);color:#203D32}
+.sec>.wrap>p.sub,.section-heading .sub{margin:8px 0 0;color:#718075;max-width:42em}
+.collection-count{font-size:13px;color:#718075;white-space:nowrap;padding-bottom:7px}
+.shop-tools{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:28px 0 16px}
+.search-box{display:flex;align-items:center;gap:10px;flex:1;max-width:520px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:9px;padding:0 14px;color:#A27C3E}
+.search-box>span{font-size:25px;line-height:1}
+.search-box input{width:100%;min-width:0;border:0;outline:0;background:transparent;padding:13px 0;font:14px var(--sans);color:var(--ink)}
+.sort-box{display:flex;align-items:center;gap:9px;color:#718075;font-size:13px;white-space:nowrap}
+.sort-box select{border:1px solid var(--line);background:#fff;border-radius:8px;padding:11px 30px 11px 12px;color:#203D32;font:13px var(--sans);max-width:190px}
+.category-pills{display:flex;gap:9px;overflow-x:auto;padding:3px 0 13px;scrollbar-width:thin}
+.category-pill{border:1px solid #D8DCCF;background:transparent;color:#526458;border-radius:999px;padding:8px 16px;font:500 13px var(--sans);white-space:nowrap;cursor:pointer}
+.category-pill:hover,.category-pill.active{background:#203D32;color:#fff;border-color:#203D32}
+.category-section{margin:30px 0 48px}
+.category-heading{margin-bottom:18px}
+.category-heading h3{font-family:var(--sans);font-size:24px;color:#203D32;font-weight:600}
+.category-heading span{background:#DDD8CB}
+.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{border:1px solid #E8E4DA;border-radius:10px;background:#fff;box-shadow:0 4px 16px rgba(32,61,50,.035);transition:transform .22s,box-shadow .22s,border-color .22s}
+.card:hover{transform:translateY(-5px);border-color:#D6C49D;box-shadow:0 16px 32px rgba(32,61,50,.10)}
+.card img,.card .fallback{aspect-ratio:4/4.6;object-fit:cover;background:#F2F0E9}
+.card .b{padding:14px 14px 16px}
+.card h3{font-family:var(--sans);font-size:15px;line-height:1.45;font-weight:600;color:#263D32;min-height:2.8em}
+.card .tag{font-size:12px;color:#849087;line-height:1.5}
+.card .more{font-size:12px;color:#8C6A32}
+.product-price{font-size:16px;color:#203D32;margin:8px 0 3px}
+.subcategory-section{border-left:2px solid #D8BD83}
+.custom{background:#203D32;border-radius:14px;box-shadow:0 18px 42px rgba(32,61,50,.12)}
+.custom h2{color:#F8F4E9}
+.story img{border-radius:12px;box-shadow:0 14px 35px rgba(32,61,50,.08)}
+.trust div{border-radius:10px;border-color:#E8E4DA;box-shadow:0 4px 15px rgba(32,61,50,.035)}
+.site-footer{background:#183329}
+dialog{border-radius:14px}
+.pay-choice{border-radius:9px}
+.checkout input,.checkout textarea{border-radius:8px}
+.empty-category{background:#fff;border:1px dashed #D8D2C5;border-radius:10px;padding:22px;text-align:center}
+@media(max-width:1000px){
+  .main-header .nav{gap:16px}
+  .main-header nav{gap:14px}
+  .main-header nav a{font-size:13px}
+  .header-admin{display:none}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:780px){
+  .top{font-size:11px}
+  .main-header .nav{height:66px;min-height:66px;gap:10px}
+  .main-header .logo{font-size:27px;gap:8px;letter-spacing:.15em}
+  .main-header .brand-mark{width:42px;height:42px}
+  .main-header nav{display:none}
+  .header-actions{margin-left:auto}
+  .header-contact{font-size:12px;padding:9px 13px}
+  .mobile-nav{display:flex;gap:20px;overflow-x:auto;white-space:nowrap;padding-top:10px;padding-bottom:11px;scrollbar-width:none}
+  .mobile-nav::-webkit-scrollbar{display:none}
+  .mobile-nav a{font-size:12px;color:#526458;font-weight:600}
+  .hero{padding:28px 16px 38px;gap:22px}
+  .hero figure{order:-1;width:100%;max-width:460px;margin:0 auto}
+  .hero figure img{aspect-ratio:4/3;max-height:340px;border-radius:120px 120px 12px 12px}
+  .hero h1{font-size:clamp(39px,9.5vw,56px)}
+  .hero p{font-size:15px}
+  .sec{padding:42px 0}
+  .section-heading{align-items:start;flex-direction:column;gap:5px;margin-bottom:16px}
+  .section-heading h2{font-size:37px}
+  .collection-count{padding:0}
+  .shop-tools{align-items:stretch;flex-direction:column;gap:10px;margin:20px 0 13px}
+  .search-box{max-width:none}
+  .sort-box{justify-content:space-between}
+  .sort-box select{flex:1;max-width:none}
+  .category-pills{gap:7px}
+  .category-pill{padding:8px 13px;font-size:12px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+  .card .b{padding:10px 10px 13px}
+  .card h3{font-size:14px;min-height:0}
+  .card .tag{font-size:11px}
+  .product-price{font-size:14px}
+  .category-section{margin:24px 0 34px}
+  .category-heading h3{font-size:21px}
+  .custom{padding:28px 20px;gap:22px}
+  .trust{grid-template-columns:1fr}
+  .site-footer{padding:34px 0 22px}
+}
+@media(max-width:390px){
+  .main-header .logo{font-size:24px}
+  .main-header .brand-mark{width:38px;height:38px}
+  .header-contact{padding:8px 10px;font-size:11px}
+  .mobile-nav{gap:16px}
+  .grid{gap:8px}
+  .card .b{padding:9px}
+  .card h3{font-size:13px}
+}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ELSHA cart, wishlist and richer product details */
+.header-actions{display:flex;align-items:center;gap:12px}
+.header-icon-btn{border:1px solid #D8DCCF;background:#fff;color:#203D32;border-radius:999px;padding:9px 13px;font:600 13px var(--sans);cursor:pointer;white-space:nowrap}
+.header-icon-btn:hover{background:#203D32;color:#fff}
+.header-icon-btn .count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;margin-left:5px;border-radius:99px;background:#D9B56D;color:#203D32;font-size:11px}
+.product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.product-actions .btn{font-size:14px;padding:10px 16px}
+.btn.gold{background:#D9B56D;color:#203D32}
+.btn.gold:hover{background:#E7C98D}
+.cart-dialog,.wishlist-dialog{max-width:680px;padding:28px;background:#F8F7F2}
+.panel-title{font-family:var(--serif);font-size:32px;color:#203D32;margin:0 42px 6px 0}
+.panel-sub{color:#718075;font-size:14px;margin-bottom:18px}
+.cart-list,.wishlist-list{display:grid;gap:12px}
+.cart-row,.wishlist-row{display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:13px;align-items:center;background:#fff;border:1px solid #E1E3D9;border-radius:12px;padding:10px}
+.cart-row img,.wishlist-row img{width:76px;height:76px;object-fit:cover;border-radius:8px;background:#F0F0EA}
+.cart-row h4,.wishlist-row h4{font-size:15px;line-height:1.3;color:#203D32;margin:0 0 4px}
+.cart-row p,.wishlist-row p{font-size:13px;color:#718075;margin:0}
+.qty-control{display:flex;align-items:center;gap:8px;margin-top:8px}
+.qty-control button,.remove-item{border:1px solid #D8DCCF;background:#fff;color:#203D32;border-radius:7px;min-width:28px;height:28px;cursor:pointer}
+.remove-item{padding:4px 8px;width:auto;font-size:12px}
+.cart-total{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #D8DCCF;margin-top:18px;padding-top:16px;font-weight:700;color:#203D32}
+.panel-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.panel-actions .btn{flex:1;text-align:center}
+.empty-panel{text-align:center;padding:30px 12px;color:#718075;background:#fff;border:1px dashed #D8DCCF;border-radius:12px}
+.wishlist-row{grid-template-columns:76px minmax(0,1fr) auto}
+@media(max-width:780px){
+ .header-actions{gap:6px}.header-icon-btn{padding:7px 9px;font-size:12px}.header-admin{display:none}
+ .cart-dialog,.wishlist-dialog{padding:23px 14px;width:calc(100% - 16px)}
+ .panel-title{font-size:28px}.cart-row,.wishlist-row{grid-template-columns:60px minmax(0,1fr) auto;gap:9px;padding:8px}
+ .cart-row img,.wishlist-row img{width:60px;height:60px}.cart-row h4,.wishlist-row h4{font-size:13px}
+ .cart-row p,.wishlist-row p{font-size:12px}.remove-item{font-size:11px;padding:3px 5px}
+ .product-actions{display:grid;grid-template-columns:1fr 1fr}.product-actions .btn{text-align:center;padding:10px 8px;font-size:13px}
+}
+
+
+/* Multi-page navigation additions */
+.page-intro{padding:52px 20px 28px}.page-intro h1{font:600 clamp(38px,5vw,58px)/1.08 var(--serif);margin-bottom:10px}.page-intro p{color:var(--soft);max-width:650px}.content-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(22px,4vw,38px);margin:22px auto 46px;max-width:920px}.content-panel h2,.content-panel h3{margin:0 0 12px}.content-panel p{color:var(--soft);margin:10px 0}.content-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.content-tile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}.content-tile h3{font-size:19px;margin-bottom:8px}.page-nav-link{font-weight:600;color:var(--blue)}.page-hero-note{background:#203D32;color:#fff;border-radius:14px;padding:28px;margin:24px auto}.page-hero-note p{color:#E4E9E3}.faq-item{border-bottom:1px solid var(--line);padding:17px 0}.faq-item:last-child{border:0}.faq-item summary{font-weight:600;cursor:pointer}.faq-item p{margin:9px 0 0;color:var(--soft)}.page-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.site-footer .footer-links{flex-wrap:wrap}
+@media(max-width:780px){.page-intro{padding:34px 16px 18px}.content-panel{margin:16px 12px 32px;padding:22px 18px}}
+
+.hero,.main>#custom,.main>#story,#custom,#story{display:none!important}.collection-sec{padding-top:36px}.collection-sec .section-heading{margin-top:10px}
+</style>
+</head>
+<body>
+<div class="top">বাংলাদেশজুড়ে ডেলিভারি <span aria-hidden="true">✦</span> প্রতিটি পণ্য যত্নে হাতে তৈরি</div>
+<header class="main-header">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="ELSHA Home"><img class="brand-mark" src="assets/images/elsha-mark.png" alt="ELSHA crochet logo"><span>ELSHA</span></a>
+    <nav aria-label="প্রধান নেভিগেশন">
+      <a href="index.html">হোম</a><a href="shop.html">শপ কালেকশন</a><a href="contact.html#custom">কাস্টম অর্ডার</a><a href="about.html">আমাদের গল্প</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-icon-btn" type="button" id="openWishlist" aria-label="পছন্দের তালিকা খুলুন">♡ পছন্দ <span class="count" id="wishlistCount">০</span></button>
+      <button class="header-icon-btn" type="button" id="openCart" aria-label="শপিং কার্ট খুলুন">কার্ট <span class="count" id="cartCount">০</span></button>
+      <a class="header-contact" href="#" data-contact>যোগাযোগ</a>
+      <a class="header-admin" href="https://shawonlgg2-lab.github.io/Elsha/admin.html" target="_blank" rel="noopener" aria-label="Admin Dashboard">Admin</a>
+    </div>
+  </div>
+  <div class="mobile-nav wrap">
+    <a href="shop.html">কালেকশন</a><a href="contact.html#custom">কাস্টম অর্ডার</a><a href="about.html">আমাদের গল্প</a><a href="contact.html">যোগাযোগ</a><a href="faq.html">FAQ</a>
+  </div>
+</header>
+<main id="top">
+<section class="wrap hero"><div><h1>Handmade with love, made for you.</h1><p>হাতে বোনা ক্রোশে পোশাক—আপনার পছন্দের রং, ডিজাইন ও মাপ অনুযায়ী যত্ন নিয়ে তৈরি।</p><div class="cta"><a class="btn" href="#collection">কালেকশন দেখুন</a><a class="btn line" href="#" data-contact>অর্ডার করতে যোগাযোগ করুন</a></div></div><figure><img src="assets/images/hero-kids.jpg" alt="ELSHA হাতে তৈরি ক্রোশে পোশাকে দুই শিশু"><figcaption>Little Fashion, Endless Love</figcaption></figure></section>
+<section class="sec collection-sec" id="collection">
+  <div class="wrap">
+    <div class="section-heading">
+      <div><span class="eyebrow">THE ELSHA EDIT</span><h2>Handmade Collection</h2><p class="sub">আপনার পছন্দের হাতে বোনা ডিজাইনটি খুঁজে নিন।</p></div>
+      <span class="collection-count" id="collectionCount">পণ্য লোড হচ্ছে...</span>
+    </div>
+    <div class="shop-tools">
+      <label class="search-box"><span aria-hidden="true">⌕</span><input id="productSearch" type="search" placeholder="পণ্যের নাম দিয়ে খুঁজুন..." aria-label="পণ্য খুঁজুন"></label>
+      <label class="sort-box"><span>সাজান</span><select id="productSort" aria-label="পণ্য সাজান"><option value="featured">জনপ্রিয় / নতুন</option><option value="price-low">দাম: কম থেকে বেশি</option><option value="price-high">দাম: বেশি থেকে কম</option><option value="name">নাম অনুযায়ী</option></select></label>
+    </div>
+    <div class="category-pills" role="group" aria-label="ক্যাটাগরি ফিল্টার">
+      <button type="button" class="category-pill active" data-category="all" aria-pressed="true">সব পণ্য</button>
+      <button type="button" class="category-pill" data-category="kids" aria-pressed="false">বাচ্চাদের সোয়েটার</button>
+      <button type="button" class="category-pill" data-category="dress" aria-pressed="false">মেয়েদের ড্রেস</button>
+      <button type="button" class="category-pill" data-category="acc" aria-pressed="false">অ্যাক্সেসরিজ</button>
+    </div>
+    <div id="collectionSections"><p class="loading">কালেকশন লোড হচ্ছে...</p></div>
+  </div>
+</section>
+<section class="sec" id="custom"><div class="wrap"><div class="custom"><div><h2>Custom Made, Just for You</h2><p style="margin-top:12px">ELSHA-র প্রতিটি পোশাক অর্ডার পাওয়ার পর আপনার জন্য আলাদাভাবে বানানো হয়। তাই রং, সাইজ ও ডিজাইন সবই আপনার পছন্দমতো।</p><p style="margin-top:20px"><a class="btn alt" href="#" data-contact>এখনই অর্ডার করুন</a></p></div><div class="steps"><div><b>পছন্দ বেছে নিন</b><span>কালেকশন থেকে ডিজাইন নির্বাচন করুন।</span></div><div><b>রং ও মাপ জানান</b><span>ফোনে আপনার পছন্দ ও সাইজ জানান।</span></div><div><b>আমরা হাতে বানাই</b><span>যত্ন নিয়ে তৈরি করে সারা বাংলাদেশে পাঠাই।</span></div></div></div></div></section>
+<section class="sec" id="story"><div class="wrap"><div class="story"><img src="assets/images/colorful-crochet-knit.jpg" alt="রঙিন হাতে বোনা ক্রোশে নিটওয়্যার"><div><h2>Every stitch, with care</h2><p>ELSHA বিশ্বাস করে, সুন্দর পোশাক শুধু ট্রেন্ড নয়—এটি যত্ন আর ভালোবাসার প্রকাশ। ছোটদের আরামদায়ক ক্রোশে পোশাক থেকে শুরু করে প্রতিটি হ্যান্ডমেড ডিজাইনে আমরা রাখি নিখুঁত বুনন।</p></div></div><div class="trust"><div><b>Nationwide delivery</b><span>বাংলাদেশের সর্বত্র ডেলিভারি</span></div><div><b>Made to order</b><span>আপনার পছন্দ অনুযায়ী কাস্টমাইজ</span></div><div><b>Made with care</b><span>যত্নে তৈরি, ভালোবাসায় বাছাই</span></div></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="logo footer-logo" href="#top" aria-label="ELSHA Home">
+      <img class="brand-mark" src="assets/images/elsha-mark.png" alt="ELSHA crochet logo">
+      <span>ELSHA</span>
+    </a>
+    <p class="footer-tagline">Handmade with love, made for you.</p>
+    <div class="footer-details">
+      <span><span class="footer-symbol">⌖</span> Dohar-Joypara, Dhaka, Bangladesh</span>
+      <a href="tel:+8801621125589"><span class="footer-symbol">☎</span> +880 1621-125589</a>
+    </div>
+    <div class="footer-links">
+      <a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="cart.html">Cart</a><a href="wishlist.html">Wishlist</a><a href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook Page</a>
+      <a href="https://shawonlgg2-lab.github.io/Elsha/admin.html" class="footer-admin" target="_blank" rel="noopener">Admin Login</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">© 2026 ELSHA. All rights reserved.</p>
+  </div>
+</footer>
+<dialog id="pd" aria-label="Product details"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="pd"><img id="pi" alt=""><div class="t"><h3 id="pn"></h3><p id="pdsc"></p><ul id="pf"></ul><div class="product-actions"><button class="btn gold" id="addToWishlist" type="button">♡ পছন্দে রাখুন</button><button class="btn line" id="addToCart" type="button">কার্টে যোগ করুন</button><button class="btn alt" id="pwa" type="button">এখনই অর্ডার</button><a class="btn line" id="fullProductPage" href="product.html">সম্পূর্ণ বিস্তারিত</a><a class="btn line" href="#" data-contact>যোগাযোগ</a></div></div></div></dialog>
+<dialog id="ct" aria-label="Contact"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="ct"><h3>যোগাযোগ করুন</h3><p style="color:var(--soft)">কাস্টম অর্ডার বা যেকোনো প্রশ্নে আমাদের জানান।</p><div class="row"><small>Phone / WhatsApp</small><a href="tel:+8801621125589">+8801621125589</a></div><div class="row"><small>Address</small><b style="font-size:19px">Dohar-Joypara<br>Dhaka-Bangladesh</b></div><div class="btns" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn" href="tel:+8801621125589">কল করুন</a><a class="btn alt" href="https://wa.me/8801621125589" target="_blank" rel="noopener">WhatsApp</a><a class="btn line" href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a></div></div></dialog>
+<dialog id="cartDlg" class="cart-dialog" aria-label="Shopping Cart">
+<button class="x" aria-label="বন্ধ করুন" data-close>×</button>
+<h3 class="panel-title">আপনার শপিং কার্ট</h3><p class="panel-sub">পছন্দের পণ্যগুলো এখানে একসঙ্গে দেখতে পারবেন।</p>
+<div id="cartList" class="cart-list"></div>
+<div class="cart-total"><span>সর্বমোট</span><span id="cartTotal">৳ ০</span></div>
+<div class="panel-actions"><button class="btn alt" type="button" id="cartCheckout">চেকআউট করুন</button><button class="btn line" type="button" data-close>আরও কেনাকাটা</button></div>
+</dialog>
+<dialog id="wishlistDlg" class="wishlist-dialog" aria-label="Wishlist">
+<button class="x" aria-label="বন্ধ করুন" data-close>×</button>
+<h3 class="panel-title">আপনার পছন্দের তালিকা</h3><p class="panel-sub">পরে দেখার জন্য রাখা পণ্যগুলো এখানে পাবেন।</p>
+<div id="wishlistList" class="wishlist-list"></div>
+<div class="panel-actions"><button class="btn line" type="button" data-close>কালেকশনে ফিরে যান</button></div>
+</dialog>
+<dialog id="checkoutDlg" aria-label="ELSHA Checkout">
+<button class="x" aria-label="বন্ধ করুন" data-close>×</button>
+<form class="checkout" id="checkoutForm">
+<h3>ELSHA Checkout</h3><p class="subnote" id="checkoutProduct"></p>
+<label for="buyerName">আপনার নাম *</label><input id="buyerName" required autocomplete="name" placeholder="সম্পূর্ণ নাম">
+<label for="buyerPhone">মোবাইল নম্বর *</label><input id="buyerPhone" required inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX">
+<label for="buyerAddress">সম্পূর্ণ ডেলিভারি ঠিকানা *</label><textarea id="buyerAddress" required autocomplete="street-address" placeholder="গ্রাম/এলাকা, থানা, জেলা"></textarea>
+<label>পেমেন্ট পদ্ধতি নির্বাচন করুন *</label>
+<div class="pay-methods">
+<label class="pay-choice"><input type="radio" name="paymentMethod" value="bKash" required><span class="pay-logo pay-bkash">bKash</span><span>bKash</span></label>
+<label class="pay-choice"><input type="radio" name="paymentMethod" value="Nagad"><span class="pay-logo pay-nagad">Nagad</span><span>Nagad</span></label>
+<label class="pay-choice"><input type="radio" name="paymentMethod" value="Rocket"><span class="pay-logo pay-rocket">Rocket</span><span>Rocket</span></label>
+<label class="pay-choice"><input type="radio" name="paymentMethod" value="Cash on Delivery"><span class="pay-logo pay-cod">COD</span><span>Cash on Delivery</span></label>
+</div>
+<div id="walletFields" hidden><div class="pay-instruction" id="walletInstruction">মোবাইল ব্যাংকিং নম্বর ও পেমেন্ট নির্দেশনা WhatsApp-এ নিশ্চিত করা হবে।</div>
+<label for="senderPhone">যে নম্বর থেকে টাকা পাঠাবেন</label><input id="senderPhone" inputmode="tel" placeholder="আপনার বিকাশ/নগদ/রকেট নম্বর">
+<label for="transactionId">Transaction ID (পেমেন্ট করে থাকলে)</label><input id="transactionId" placeholder="ঐচ্ছিক — পেমেন্টের পর লিখুন">
+</div>
+<p class="subnote">অর্ডার নিশ্চিত করতে WhatsApp-এ আপনার তথ্য ও নির্বাচিত পেমেন্ট পদ্ধতি পাঠানো হবে।</p>
+<div class="checkout-actions"><button class="btn" type="submit">WhatsApp-এ অর্ডার নিশ্চিত করুন</button><button class="btn line" type="button" data-close>বাতিল</button></div>
+</form></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+'use strict';
+const SUPABASE_URL='https://ncvfevqhzsupzkbjyqld.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_zl9gUQxyZP4UVLNzu73_tw_ilyvI2tE';
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+const SECTIONS=[{key:'kids',title:'বাচ্চাদের সোয়েটার'},{key:'dress',title:'মেয়েদের ড্রেস'},{key:'acc',title:'অ্যাক্সেসরিজ'}];
+const fallbackProducts=[
+{name:'Floral Crochet Cardigan',image_url:'assets/images/floral-cardigan.jpg',subtitle:'Ivory · Handmade flowers',description:'আইভরি রঙের নরম ক্রোশে কার্ডিগান, গায়ে হাতে বোনা নীল ও সাদা ফুলের নকশা।',features:['হাতে বোনা ফুলের ডিটেইল','নরম ও আরামদায়ক সুতা','রং ও সাইজ কাস্টমাইজ করা যায়'],category:'বাচ্চাদের সোয়েটার'},
+{name:'Colour Block Crochet Cardigan',image_url:'assets/images/blue-crochet-cardigan.png',subtitle:'Blue · White · Mustard',description:'নীল, সাদা ও সরিষা রঙের মিশ্রণে তৈরি রঙিন ব্লক ডিজাইনের ক্রোশে কার্ডিগান।',features:['তিন রঙের ব্লক ডিজাইন','প্রতিদিনের ব্যবহারের জন্য আরামদায়ক','পছন্দমতো রং ও মাপে বানানো হয়'],category:'বাচ্চাদের সোয়েটার'},
+{name:'Granny Square Cardigan & Cap Set',image_url:'assets/images/granny-square-set.jpg',subtitle:'Cream · Cardigan + Cap',description:'ক্রিম রঙের গ্র্যানি স্কয়ার কার্ডিগান ও ম্যাচিং ক্যাপের সেট।',features:['কার্ডিগান ও ক্যাপ একসাথে','ঐতিহ্যবাহী গ্র্যানি স্কয়ার প্যাটার্ন','রং ও সাইজ কাস্টমাইজ করা যায়'],category:'বাচ্চাদের সোয়েটার'},
+{name:'Teddy Pocket Crochet Hoodie',image_url:'assets/images/blue-teddy-hoodie.jpg',subtitle:'Blue · Kids',description:'নীল রঙের হাতে বোনা ক্রোশে হুডি, পকেটে টেডি বিয়ারের ডিজাইন।',features:['টেডি বিয়ার পকেট','ছোটদের জন্য নরম ও আরামদায়ক','মাপ ও রং অর্ডার অনুযায়ী'],category:'বাচ্চাদের সোয়েটার'},
+{name:'Multicolour Granny Square Sweater',image_url:'assets/images/colorful-crochet-knit.jpg',subtitle:'Multicolour · One of a kind',description:'রঙিন গ্র্যানি স্কয়ার প্যাটার্নে বোনা ক্রোশে সোয়েটার—প্রতিটি আলাদা ও বিশেষ।',features:['রঙিন গ্র্যানি স্কয়ার বুনন','প্রতিটি পিস আলাদাভাবে তৈরি','রঙের কম্বিনেশন আপনার পছন্দে'],category:'বাচ্চাদের সোয়েটার'}
+];
+let products=[];
+let activeCategory='all', searchTerm='', sortMode='featured';
+const root=document.getElementById('collectionSections'),pd=document.getElementById('pd'),ct=document.getElementById('ct');
+function priceNumber(value){const n=Number(asciiDigits(value).replace(/[^0-9.]/g,''));return Number.isFinite(n)?n:0}
+function productMatches(p){const q=searchTerm.trim().toLocaleLowerCase();return (!q||[p.n,p.t,p.d,p.category,p.subCategory].join(' ').toLocaleLowerCase().includes(q))&&(activeCategory==='all'||p.section===activeCategory)}
+function sortedProducts(items){const list=[...items];if(sortMode==='price-low')list.sort((a,b)=>priceNumber(a.price)-priceNumber(b.price));else if(sortMode==='price-high')list.sort((a,b)=>priceNumber(b.price)-priceNumber(a.price));else if(sortMode==='name')list.sort((a,b)=>a.n.localeCompare(b.n,'bn'));return list}
+function updateCollectionCount(count){const el=document.getElementById('collectionCount');if(el)el.textContent=new Intl.NumberFormat('bn-BD').format(count)+'টি পণ্য';}
+function asciiDigits(v){return String(v??'').replace(/[০-৯]/g,d=>'০১২৩৪৫৬৭৮৯'.indexOf(d))}
+function formatBDT(v){const n=Number(asciiDigits(v).replace(/[^0-9.]/g,''));return Number.isFinite(n)&&n>0?'৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(n):''}
+function groupOf(category,name=''){const c=String(category||'').toLowerCase(),n=String(name||'').toLowerCase();if(/অ্যাক্সেসরিজ|অ্যাক্সেসরি|accessor|ক্লিপ|জুতা|ব্যাগ|clip|shoe|bag|টুপি|স্কার্ফ|cap|scarf|beanie/.test(c))return'acc';if(/ড্রেস|ফ্রক|dress|frock/.test(c))return'dress';if(/সোয়েটার|সোয়েটার|কার্ডিগান|হুডি|বাচ্চা|sweater|cardigan|hoodie|kids|set|সেট/.test(c))return'kids';if(/dress|frock/.test(n))return'dress';if(/clip|shoe|bag|accessor|টুপি|ক্লিপ|জুতা|ব্যাগ/.test(n))return'acc';return'kids'}
+function accessoryType(category,name=''){const v=(String(category||'')+' '+String(name||'')).toLowerCase();if(/মাথার ক্লিপ|ক্লিপ|hair.?clip|hair.?clasp|clip/.test(v))return'মাথার ক্লিপ';if(/বাচ্চাদের জুতা|জুতা|shoe|sandal/.test(v))return'বাচ্চাদের জুতা';if(/হ্যান্ডব্যাগ|হ্যান্ড ব্যাগ|ব্যাগ|hand.?bag|purse/.test(v))return'হ্যান্ডব্যাগ';return'অন্যান্য'}
+function normalizeProduct(r){return{id:r.id,n:r.name||'নাম নেই',i:r.image_url||'',t:r.subtitle||'',d:r.description||'',f:Array.isArray(r.features)?r.features:typeof r.features==='string'?r.features.split(/\r?\n/).filter(Boolean):[],price:r.price??'',stock:Number(r.stock_qty??0),category:r.category||'',section:groupOf(r.category,r.name),subCategory:groupOf(r.category,r.name)==='acc'?accessoryType(r.category,r.name):'',visible:r.is_visible!==false&&r.is_active!==false}}
+function makeImage(src,name){if(src){const img=document.createElement('img');img.src=src;img.alt=name;img.loading='lazy';img.onerror=()=>{const f=document.createElement('div');f.className='fallback';f.textContent='ELSHA';img.replaceWith(f)};return img}const f=document.createElement('div');f.className='fallback';f.textContent='ELSHA';return f}
+function renderProducts(){root.replaceChildren();const visible=products.filter(p=>p.visible&&productMatches(p));updateCollectionCount(visible.length);SECTIONS.forEach(section=>{if(activeCategory!=='all'&&activeCategory!==section.key)return;const items=sortedProducts(visible.filter(p=>p.section===section.key));if(!items.length)return;const sectionEl=document.createElement('section');sectionEl.className='category-section';const heading=document.createElement('div');heading.className='category-heading';const title=document.createElement('h3');title.textContent=section.title;const line=document.createElement('span');heading.append(title,line);sectionEl.append(heading);const groups=section.key==='acc'?[{title:'মাথার ক্লিপ',items:items.filter(p=>p.subCategory==='মাথার ক্লিপ')},{title:'বাচ্চাদের জুতা',items:items.filter(p=>p.subCategory==='বাচ্চাদের জুতা')},{title:'হ্যান্ডব্যাগ',items:items.filter(p=>p.subCategory==='হ্যান্ডব্যাগ')},{title:'অন্যান্য',items:items.filter(p=>p.subCategory==='অন্যান্য')}]:[{title:'',items}];groups.forEach(group=>{if(!group.items.length)return;const sub=document.createElement('div');sub.className=section.key==='acc'?'subcategory-section':'';if(group.title){const sh=document.createElement('h4');sh.className='subcategory-heading';sh.textContent=group.title;sub.append(sh)}const grid=document.createElement('div');grid.className='grid';group.items.forEach(p=>{const b=document.createElement('button');b.className='card';b.type='button';b.append(makeImage(p.i,p.n));const body=document.createElement('div');body.className='b';const h=document.createElement('h3');h.textContent=p.n;body.append(h);const tag=document.createElement('div');tag.className='tag';tag.textContent=p.t;body.append(tag);const price=formatBDT(p.price);if(price){const priceEl=document.createElement('div');priceEl.className='product-price';priceEl.textContent=price;body.append(priceEl)}const stock=document.createElement('div');stock.className='tag';stock.textContent=p.stock>0?'স্টকে আছে: '+new Intl.NumberFormat('bn-BD').format(p.stock):'অর্ডার অনুযায়ী তৈরি করা যাবে';body.append(stock);const more=document.createElement('span');more.className='more';more.textContent='বিস্তারিত দেখুন';body.append(more);b.append(body);b.addEventListener('click',()=>show(p));grid.append(b)});sub.append(grid);sectionEl.append(sub)});root.append(sectionEl)});if(!visible.length){const msg=document.createElement('p');msg.className='empty-category';msg.textContent=searchTerm?'আপনার খোঁজের সঙ্গে মেলে এমন কোনো পণ্য পাওয়া যায়নি।':'এই মুহূর্তে কোনো পণ্য দেখানোর জন্য নেই।';root.append(msg)}}
+let selectedProduct=null;
+let checkoutMode='single';
+let cartItems=readStore('elsha_cart_v1',[]);
+let wishlistKeys=readStore('elsha_wishlist_v1',[]);
+function readStore(key,fallback){try{const value=JSON.parse(localStorage.getItem(key)||'null');return Array.isArray(value)?value:fallback}catch{return fallback}}
+function productKey(p){return String(p.id??p.n)}
+function persistShop(){try{localStorage.setItem('elsha_cart_v1',JSON.stringify(cartItems));localStorage.setItem('elsha_wishlist_v1',JSON.stringify(wishlistKeys))}catch(e){console.warn('ELSHA local storage unavailable',e)}updateShopCounts()}
+function findProduct(key){return products.find(p=>productKey(p)===String(key))||null}
+function updateShopCounts(){const cartCount=document.getElementById('cartCount'),wishCount=document.getElementById('wishlistCount');if(cartCount)cartCount.textContent=new Intl.NumberFormat('bn-BD').format(cartItems.reduce((n,x)=>n+Math.max(0,Number(x.qty)||0),0));if(wishCount)wishCount.textContent=new Intl.NumberFormat('bn-BD').format(wishlistKeys.length)}
+function addToCart(p,qty=1){const key=productKey(p),found=cartItems.find(x=>String(x.key)===key);if(found)found.qty=Math.max(1,Number(found.qty)||1)+qty;else cartItems.push({key,qty});persistShop();renderCart()}
+function toggleWishlist(p){const key=productKey(p);wishlistKeys=wishlistKeys.includes(key)?wishlistKeys.filter(x=>x!==key):[...wishlistKeys,key];persistShop();renderWishlist();const b=document.getElementById('addToWishlist');if(b&&selectedProduct===p)b.textContent=wishlistKeys.includes(key)?'♥ পছন্দে রাখা হয়েছে':'♡ পছন্দে রাখুন'}
+function makeShopRowImage(p){const img=document.createElement('img');img.src=p.i||'';img.alt=p.n;img.onerror=()=>{img.src='';img.alt='ছবি পাওয়া যায়নি'};return img}
+function renderCart(){const list=document.getElementById('cartList');if(!list)return;list.replaceChildren();let total=0;cartItems=cartItems.filter(x=>findProduct(x.key));if(!cartItems.length){const empty=document.createElement('div');empty.className='empty-panel';empty.textContent='আপনার কার্ট এখনো খালি। পছন্দের পণ্য কার্টে যোগ করুন।';list.append(empty)}cartItems.forEach(item=>{const p=findProduct(item.key);if(!p)return;const row=document.createElement('div');row.className='cart-row';row.append(makeShopRowImage(p));const info=document.createElement('div');const title=document.createElement('h4');title.textContent=p.n;info.append(title);const price=document.createElement('p');price.textContent=formatBDT(p.price)||'দাম WhatsApp-এ নিশ্চিত করুন';info.append(price);const controls=document.createElement('div');controls.className='qty-control';const minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','একটি কমান');minus.onclick=()=>{item.qty=Math.max(1,(Number(item.qty)||1)-1);persistShop();renderCart()};const qty=document.createElement('span');qty.textContent=new Intl.NumberFormat('bn-BD').format(item.qty);const plus=document.createElement('button');plus.type='button';plus.textContent='+';plus.setAttribute('aria-label','একটি বাড়ান');plus.onclick=()=>{item.qty=(Number(item.qty)||1)+1;persistShop();renderCart()};controls.append(minus,qty,plus);info.append(controls);row.append(info);const remove=document.createElement('button');remove.type='button';remove.className='remove-item';remove.textContent='বাদ দিন';remove.onclick=()=>{cartItems=cartItems.filter(x=>String(x.key)!==String(item.key));persistShop();renderCart()};row.append(remove);list.append(row);total+=priceNumber(p.price)*(Number(item.qty)||1)});document.getElementById('cartTotal').textContent=total>0?'৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(total):'দাম নিশ্চিত করতে হবে';persistShop()}
+function renderWishlist(){const list=document.getElementById('wishlistList');if(!list)return;list.replaceChildren();wishlistKeys=wishlistKeys.filter(k=>findProduct(k));if(!wishlistKeys.length){const empty=document.createElement('div');empty.className='empty-panel';empty.textContent='এখনো কোনো পণ্য পছন্দের তালিকায় যোগ করেননি।';list.append(empty)}wishlistKeys.forEach(key=>{const p=findProduct(key);if(!p)return;const row=document.createElement('div');row.className='wishlist-row';row.append(makeShopRowImage(p));const info=document.createElement('div');const title=document.createElement('h4');title.textContent=p.n;info.append(title);const price=document.createElement('p');price.textContent=formatBDT(p.price)||'দাম WhatsApp-এ নিশ্চিত করুন';info.append(price);row.append(info);const remove=document.createElement('button');remove.type='button';remove.className='remove-item';remove.textContent='সরান';remove.onclick=()=>{wishlistKeys=wishlistKeys.filter(x=>String(x)!==String(key));persistShop();renderWishlist()};row.append(remove);list.append(row)})}
+function openCart(){renderCart();document.getElementById('cartDlg').showModal()}
+function openWishlist(){renderWishlist();document.getElementById('wishlistDlg').showModal()}
+function show(p){selectedProduct=p;const fullLink=document.getElementById('fullProductPage');if(fullLink)fullLink.href='product.html?id='+encodeURIComponent(productKey(p));const img=document.getElementById('pi');img.src=p.i||'';img.alt=p.n;img.onerror=()=>{img.removeAttribute('src')};document.getElementById('pn').textContent=p.n;document.getElementById('pdsc').textContent=p.d||'হাতে তৈরি ELSHA ক্রোশে পণ্য। কাস্টম রং ও মাপ জানতে WhatsApp-এ যোগাযোগ করুন।';document.getElementById('addToWishlist').textContent=wishlistKeys.includes(productKey(p))?'♥ পছন্দে রাখা হয়েছে':'♡ পছন্দে রাখুন';const ul=document.getElementById('pf');ul.replaceChildren();p.f.forEach(x=>{const li=document.createElement('li');li.textContent=x;ul.append(li)});const price=formatBDT(p.price);if(price){const li=document.createElement('li');li.textContent='দাম: '+price;ul.append(li)}const stockLi=document.createElement('li');stockLi.textContent=p.stock>0?'স্টকে আছে: '+p.stock:'প্রস্তুত স্টক নেই; অর্ডার অনুযায়ী তৈরি করা যাবে';ul.append(stockLi);pd.showModal();requestAnimationFrame(()=>pd.scrollTo({top:0,behavior:'instant'}))}
+function openCheckout(){if(!selectedProduct)return;checkoutMode='single';document.getElementById('checkoutProduct').textContent=selectedProduct.n+' · '+(formatBDT(selectedProduct.price)||'দাম WhatsApp-এ নিশ্চিত করুন');pd.close();const form=document.getElementById('checkoutForm');form.reset();document.getElementById('walletFields').hidden=true;document.getElementById('checkoutDlg').showModal();requestAnimationFrame(()=>document.getElementById('checkoutDlg').scrollTo({top:0,behavior:'instant'}))}
+function updatePaymentFields(){const method=document.querySelector('input[name="paymentMethod"]:checked')?.value;document.getElementById('walletFields').hidden=method==='Cash on Delivery'||!method;document.getElementById('walletInstruction').textContent=method==='Cash on Delivery'?'পণ্য হাতে পাওয়ার পর ডেলিভারির সময় নগদ টাকা পরিশোধ করুন।':method+' পেমেন্টের নম্বর ও নির্দেশনা অর্ডার WhatsApp-এ পাঠানোর পর নিশ্চিত করা হবে।'}
+document.querySelectorAll('input[name="paymentMethod"]').forEach(el=>el.addEventListener('change',updatePaymentFields));
+document.getElementById('checkoutForm').addEventListener('submit',e=>{e.preventDefault();const method=document.querySelector('input[name="paymentMethod"]:checked')?.value;if(!method){alert('পেমেন্ট পদ্ধতি নির্বাচন করুন।');return}const orderProducts=checkoutMode==='cart'?cartItems.map(item=>({p:findProduct(item.key),qty:Number(item.qty)||1})).filter(x=>x.p):selectedProduct?[{p:selectedProduct,qty:1}]:[];if(!orderProducts.length){alert('অর্ডারের জন্য কোনো পণ্য পাওয়া যায়নি।');return}const total=orderProducts.reduce((sum,x)=>sum+priceNumber(x.p.price)*x.qty,0);const lines=['ELSHA নতুন অর্ডার',...orderProducts.map(x=>'পণ্য: '+x.p.n+' × '+x.qty+' — '+(formatBDT(priceNumber(x.p.price)*x.qty)||'দাম নিশ্চিত করতে হবে')),'সর্বমোট: '+(total>0?'৳ '+new Intl.NumberFormat('bn-BD',{maximumFractionDigits:2}).format(total):'দাম নিশ্চিত করতে হবে'),'নাম: '+document.getElementById('buyerName').value.trim(),'মোবাইল: '+document.getElementById('buyerPhone').value.trim(),'ঠিকানা: '+document.getElementById('buyerAddress').value.trim(),'পেমেন্ট পদ্ধতি: '+method];if(method!=='Cash on Delivery'){const sender=document.getElementById('senderPhone').value.trim(),trx=document.getElementById('transactionId').value.trim();if(sender)lines.push('পেমেন্ট পাঠানোর নম্বর: '+sender);if(trx)lines.push('Transaction ID: '+trx)}window.open('https://wa.me/8801621125589?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');document.getElementById('checkoutDlg').close();if(checkoutMode==='cart'){cartItems=[];persistShop();renderCart()}});
+async function loadProducts(){try{const {data,error}=await supabaseClient.from('products').select('*').order('created_at',{ascending:false});if(error)throw error;products=(data||[]).map(normalizeProduct);renderProducts();renderCart();renderWishlist();updateShopCounts()}catch(error){console.error('ELSHA product load error:',error);products=fallbackProducts.map(normalizeProduct);renderProducts();renderCart();renderWishlist();updateShopCounts();const note=document.createElement('p');note.className='section-note';note.textContent='সর্বশেষ পণ্যের তথ্য লোড করা যায়নি; প্রদর্শনী পণ্য দেখানো হচ্ছে।';root.append(note)}}
+document.getElementById('productSearch').addEventListener('input',e=>{searchTerm=e.target.value;renderProducts()});
+document.getElementById('productSort').addEventListener('change',e=>{sortMode=e.target.value;renderProducts()});
+document.querySelectorAll('[data-category]').forEach(button=>button.addEventListener('click',()=>{
+  activeCategory=button.dataset.category;
+  document.querySelectorAll('[data-category]').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+  renderProducts();
+}));
+document.getElementById('openCart').addEventListener('click',openCart);
+document.getElementById('openWishlist').addEventListener('click',openWishlist);
+document.getElementById('addToCart').addEventListener('click',()=>{if(!selectedProduct)return;addToCart(selectedProduct);pd.close();openCart()});
+document.getElementById('addToWishlist').addEventListener('click',()=>{if(selectedProduct)toggleWishlist(selectedProduct)});
+document.getElementById('cartCheckout').addEventListener('click',()=>{if(!cartItems.length){alert('আপনার কার্ট খালি।');return}checkoutMode='cart';selectedProduct=findProduct(cartItems[0].key);document.getElementById('checkoutProduct').textContent=cartItems.length+'টি পণ্য · '+document.getElementById('cartTotal').textContent+' · কার্ট অর্ডার';document.getElementById('checkoutForm').reset();document.getElementById('walletFields').hidden=true;document.getElementById('cartDlg').close();document.getElementById('checkoutDlg').showModal()});
+document.getElementById('pwa').addEventListener('click',openCheckout);
+document.addEventListener('click',e=>{const c=e.target.closest('[data-contact]');if(c){e.preventDefault();if(pd.open)pd.close();if(document.getElementById('checkoutDlg').open)document.getElementById('checkoutDlg').close();ct.showModal();return}if(e.target.closest('[data-close]')){e.target.closest('dialog').close();return}if(e.target.tagName==='DIALOG')e.target.close()});
+updateShopCounts();
+loadProducts();
+</script>
+</body>
+</html>

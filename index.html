@@ -219,7 +219,7 @@ dialog{border-radius:14px}
   <div class="wrap nav">
     <a class="logo" href="#top" aria-label="ELSHA Home"><img class="brand-mark" src="assets/images/elsha-mark.png" alt="ELSHA crochet logo"><span>ELSHA</span></a>
     <nav aria-label="প্রধান নেভিগেশন">
-      <a href="#top">হোম</a><a href="#collection">শপ কালেকশন</a><a href="#custom">কাস্টম অর্ডার</a><a href="#story">আমাদের গল্প</a>
+      <a href="index.html">হোম</a><a href="shop.html">শপ কালেকশন</a><a href="contact.html#custom">কাস্টম অর্ডার</a><a href="about.html">আমাদের গল্প</a>
     </nav>
     <div class="header-actions">
       <button class="header-icon-btn" type="button" id="openWishlist" aria-label="পছন্দের তালিকা খুলুন">♡ পছন্দ <span class="count" id="wishlistCount">০</span></button>
@@ -229,7 +229,7 @@ dialog{border-radius:14px}
     </div>
   </div>
   <div class="mobile-nav wrap">
-    <a href="#collection">কালেকশন</a><a href="#custom">কাস্টম অর্ডার</a><a href="#story">আমাদের গল্প</a><a href="#" data-contact>যোগাযোগ</a>
+    <a href="shop.html">কালেকশন</a><a href="contact.html#custom">কাস্টম অর্ডার</a><a href="about.html">আমাদের গল্প</a><a href="contact.html">যোগাযোগ</a><a href="faq.html">FAQ</a>
   </div>
 </header>
 <main id="top">
@@ -268,14 +268,14 @@ dialog{border-radius:14px}
       <a href="tel:+8801621125589"><span class="footer-symbol">☎</span> +880 1621-125589</a>
     </div>
     <div class="footer-links">
-      <a href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook Page</a>
+      <a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="cart.html">Cart</a><a href="wishlist.html">Wishlist</a><a href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook Page</a>
       <a href="https://shawonlgg2-lab.github.io/Elsha/admin.html" class="footer-admin" target="_blank" rel="noopener">Admin Login</a>
     </div>
     <div class="footer-divider"></div>
     <p class="footer-copy">© 2026 ELSHA. All rights reserved.</p>
   </div>
 </footer>
-<dialog id="pd" aria-label="Product details"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="pd"><img id="pi" alt=""><div class="t"><h3 id="pn"></h3><p id="pdsc"></p><ul id="pf"></ul><div class="product-actions"><button class="btn gold" id="addToWishlist" type="button">♡ পছন্দে রাখুন</button><button class="btn line" id="addToCart" type="button">কার্টে যোগ করুন</button><button class="btn alt" id="pwa" type="button">এখনই অর্ডার</button><a class="btn line" href="#" data-contact>যোগাযোগ</a></div></div></div></dialog>
+<dialog id="pd" aria-label="Product details"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="pd"><img id="pi" alt=""><div class="t"><h3 id="pn"></h3><p id="pdsc"></p><ul id="pf"></ul><div class="product-actions"><button class="btn gold" id="addToWishlist" type="button">♡ পছন্দে রাখুন</button><button class="btn line" id="addToCart" type="button">কার্টে যোগ করুন</button><button class="btn alt" id="pwa" type="button">এখনই অর্ডার</button><a class="btn line" id="fullProductPage" href="product.html">সম্পূর্ণ বিস্তারিত</a><a class="btn line" href="#" data-contact>যোগাযোগ</a></div></div></div></dialog>
 <dialog id="ct" aria-label="Contact"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="ct"><h3>যোগাযোগ করুন</h3><p style="color:var(--soft)">কাস্টম অর্ডার বা যেকোনো প্রশ্নে আমাদের জানান।</p><div class="row"><small>Phone / WhatsApp</small><a href="tel:+8801621125589">+8801621125589</a></div><div class="row"><small>Address</small><b style="font-size:19px">Dohar-Joypara<br>Dhaka-Bangladesh</b></div><div class="btns" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn" href="tel:+8801621125589">কল করুন</a><a class="btn alt" href="https://wa.me/8801621125589" target="_blank" rel="noopener">WhatsApp</a><a class="btn line" href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a></div></div></dialog>
 <dialog id="cartDlg" class="cart-dialog" aria-label="Shopping Cart">
 <button class="x" aria-label="বন্ধ করুন" data-close>×</button>
@@ -355,7 +355,7 @@ function renderCart(){const list=document.getElementById('cartList');if(!list)re
 function renderWishlist(){const list=document.getElementById('wishlistList');if(!list)return;list.replaceChildren();wishlistKeys=wishlistKeys.filter(k=>findProduct(k));if(!wishlistKeys.length){const empty=document.createElement('div');empty.className='empty-panel';empty.textContent='এখনো কোনো পণ্য পছন্দের তালিকায় যোগ করেননি।';list.append(empty)}wishlistKeys.forEach(key=>{const p=findProduct(key);if(!p)return;const row=document.createElement('div');row.className='wishlist-row';row.append(makeShopRowImage(p));const info=document.createElement('div');const title=document.createElement('h4');title.textContent=p.n;info.append(title);const price=document.createElement('p');price.textContent=formatBDT(p.price)||'দাম WhatsApp-এ নিশ্চিত করুন';info.append(price);row.append(info);const remove=document.createElement('button');remove.type='button';remove.className='remove-item';remove.textContent='সরান';remove.onclick=()=>{wishlistKeys=wishlistKeys.filter(x=>String(x)!==String(key));persistShop();renderWishlist()};row.append(remove);list.append(row)})}
 function openCart(){renderCart();document.getElementById('cartDlg').showModal()}
 function openWishlist(){renderWishlist();document.getElementById('wishlistDlg').showModal()}
-function show(p){selectedProduct=p;const img=document.getElementById('pi');img.src=p.i||'';img.alt=p.n;img.onerror=()=>{img.removeAttribute('src')};document.getElementById('pn').textContent=p.n;document.getElementById('pdsc').textContent=p.d||'হাতে তৈরি ELSHA ক্রোশে পণ্য। কাস্টম রং ও মাপ জানতে WhatsApp-এ যোগাযোগ করুন।';document.getElementById('addToWishlist').textContent=wishlistKeys.includes(productKey(p))?'♥ পছন্দে রাখা হয়েছে':'♡ পছন্দে রাখুন';const ul=document.getElementById('pf');ul.replaceChildren();p.f.forEach(x=>{const li=document.createElement('li');li.textContent=x;ul.append(li)});const price=formatBDT(p.price);if(price){const li=document.createElement('li');li.textContent='দাম: '+price;ul.append(li)}const stockLi=document.createElement('li');stockLi.textContent=p.stock>0?'স্টকে আছে: '+p.stock:'প্রস্তুত স্টক নেই; অর্ডার অনুযায়ী তৈরি করা যাবে';ul.append(stockLi);pd.showModal();requestAnimationFrame(()=>pd.scrollTo({top:0,behavior:'instant'}))}
+function show(p){selectedProduct=p;const fullLink=document.getElementById('fullProductPage');if(fullLink)fullLink.href='product.html?id='+encodeURIComponent(productKey(p));const img=document.getElementById('pi');img.src=p.i||'';img.alt=p.n;img.onerror=()=>{img.removeAttribute('src')};document.getElementById('pn').textContent=p.n;document.getElementById('pdsc').textContent=p.d||'হাতে তৈরি ELSHA ক্রোশে পণ্য। কাস্টম রং ও মাপ জানতে WhatsApp-এ যোগাযোগ করুন।';document.getElementById('addToWishlist').textContent=wishlistKeys.includes(productKey(p))?'♥ পছন্দে রাখা হয়েছে':'♡ পছন্দে রাখুন';const ul=document.getElementById('pf');ul.replaceChildren();p.f.forEach(x=>{const li=document.createElement('li');li.textContent=x;ul.append(li)});const price=formatBDT(p.price);if(price){const li=document.createElement('li');li.textContent='দাম: '+price;ul.append(li)}const stockLi=document.createElement('li');stockLi.textContent=p.stock>0?'স্টকে আছে: '+p.stock:'প্রস্তুত স্টক নেই; অর্ডার অনুযায়ী তৈরি করা যাবে';ul.append(stockLi);pd.showModal();requestAnimationFrame(()=>pd.scrollTo({top:0,behavior:'instant'}))}
 function openCheckout(){if(!selectedProduct)return;checkoutMode='single';document.getElementById('checkoutProduct').textContent=selectedProduct.n+' · '+(formatBDT(selectedProduct.price)||'দাম WhatsApp-এ নিশ্চিত করুন');pd.close();const form=document.getElementById('checkoutForm');form.reset();document.getElementById('walletFields').hidden=true;document.getElementById('checkoutDlg').showModal();requestAnimationFrame(()=>document.getElementById('checkoutDlg').scrollTo({top:0,behavior:'instant'}))}
 function updatePaymentFields(){const method=document.querySelector('input[name="paymentMethod"]:checked')?.value;document.getElementById('walletFields').hidden=method==='Cash on Delivery'||!method;document.getElementById('walletInstruction').textContent=method==='Cash on Delivery'?'পণ্য হাতে পাওয়ার পর ডেলিভারির সময় নগদ টাকা পরিশোধ করুন।':method+' পেমেন্টের নম্বর ও নির্দেশনা অর্ডার WhatsApp-এ পাঠানোর পর নিশ্চিত করা হবে।'}
 document.querySelectorAll('input[name="paymentMethod"]').forEach(el=>el.addEventListener('change',updatePaymentFields));
