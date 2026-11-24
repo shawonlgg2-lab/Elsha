@@ -28,6 +28,33 @@ footer .logo{display:inline-flex;align-items:center;justify-content:center;color
 footer .brand-mark{width:42px;height:42px}
 @media(max-width:780px){footer .brand-mark{width:38px;height:38px}}
 
+
+/* ELSHA footer refinement */
+.site-footer{background:var(--ink);color:#C9D3E3;padding:42px 0 26px;margin-top:40px;text-align:center}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:0}
+.site-footer .footer-logo{display:inline-flex;align-items:center;justify-content:center;gap:11px;color:#fff;margin:0;font-size:34px;letter-spacing:.18em;line-height:1}
+.site-footer .brand-mark{width:54px;height:54px;border:1px solid rgba(227,169,47,.65)}
+.footer-tagline{font-family:var(--serif);font-size:17px;font-style:italic;color:#E3A92F;margin:12px 0 20px}
+.footer-details{display:flex;flex-direction:column;align-items:center;gap:7px;font-size:15px}
+.footer-details a{color:#C9D3E3}
+.footer-details a:hover,.footer-links a:hover{color:#fff}
+.footer-symbol{display:inline-block;color:#E3A92F;margin-right:7px;font-size:17px}
+.footer-links{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:22px}
+.footer-links a{color:#fff;font-size:14px}
+.footer-admin{border:1px solid #65738B;border-radius:999px;padding:7px 15px;transition:background .2s,border-color .2s}
+.footer-admin:hover{background:#30415F;border-color:#E3A92F}
+.footer-divider{width:min(100%,420px);height:1px;background:rgba(201,211,227,.2);margin:24px 0 15px}
+.footer-copy{font-size:13px;color:#AEBBD0;letter-spacing:.02em}
+@media(max-width:780px){
+  .site-footer{padding:34px 0 22px;margin-top:28px}
+  .site-footer .footer-logo{font-size:30px;gap:9px}
+  .site-footer .brand-mark{width:48px;height:48px}
+  .footer-tagline{font-size:16px;margin:10px 0 18px}
+  .footer-details{font-size:14px;gap:8px}
+  .footer-links{gap:10px;margin-top:20px}
+  .footer-copy{font-size:12px}
+}
+
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -40,7 +67,25 @@ footer .brand-mark{width:42px;height:42px}
 <section class="sec" id="custom"><div class="wrap"><div class="custom"><div><h2>Custom Made, Just for You</h2><p style="margin-top:12px">ELSHA-র প্রতিটি পোশাক অর্ডার পাওয়ার পর আপনার জন্য আলাদাভাবে বানানো হয়। তাই রং, সাইজ ও ডিজাইন সবই আপনার পছন্দমতো।</p><p style="margin-top:20px"><a class="btn alt" href="#" data-contact>এখনই অর্ডার করুন</a></p></div><div class="steps"><div><b>পছন্দ বেছে নিন</b><span>কালেকশন থেকে ডিজাইন নির্বাচন করুন।</span></div><div><b>রং ও মাপ জানান</b><span>ফোনে আপনার পছন্দ ও সাইজ জানান।</span></div><div><b>আমরা হাতে বানাই</b><span>যত্ন নিয়ে তৈরি করে সারা বাংলাদেশে পাঠাই।</span></div></div></div></div></section>
 <section class="sec" id="story"><div class="wrap"><div class="story"><img src="assets/images/colorful-crochet-knit.jpg" alt="রঙিন হাতে বোনা ক্রোশে নিটওয়্যার"><div><h2>Every stitch, with care</h2><p>ELSHA বিশ্বাস করে, সুন্দর পোশাক শুধু ট্রেন্ড নয়—এটি যত্ন আর ভালোবাসার প্রকাশ। ছোটদের আরামদায়ক ক্রোশে পোশাক থেকে শুরু করে প্রতিটি হ্যান্ডমেড ডিজাইনে আমরা রাখি নিখুঁত বুনন।</p></div></div><div class="trust"><div><b>Nationwide delivery</b><span>বাংলাদেশের সর্বত্র ডেলিভারি</span></div><div><b>Made to order</b><span>আপনার পছন্দ অনুযায়ী কাস্টমাইজ</span></div><div><b>Made with care</b><span>যত্নে তৈরি, ভালোবাসায় বাছাই</span></div></div></div></section>
 </main>
-<footer><div class="wrap"><span class="logo footer-logo"><img class="brand-mark" src="assets/images/elsha-mark.png" alt="ELSHA crochet logo"><span>ELSHA</span></span>Dohar-Joypara, Dhaka, Bangladesh · <a href="tel:+8801621125589">+880 1621-125589</a><br><a href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener" style="text-decoration:underline">Facebook Page</a><br><a href="https://shawonlgg2-lab.github.io/Elsha/admin.html" class="admin-link" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;color:#C9D3E3;border-color:#5B6780">Admin Login</a><br>© 2026 ELSHA. All rights reserved.</div></footer>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="logo footer-logo" href="#top" aria-label="ELSHA Home">
+      <img class="brand-mark" src="assets/images/elsha-mark.png" alt="ELSHA crochet logo">
+      <span>ELSHA</span>
+    </a>
+    <p class="footer-tagline">Handmade with love, made for you.</p>
+    <div class="footer-details">
+      <span><span class="footer-symbol">⌖</span> Dohar-Joypara, Dhaka, Bangladesh</span>
+      <a href="tel:+8801621125589"><span class="footer-symbol">☎</span> +880 1621-125589</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook Page</a>
+      <a href="https://shawonlgg2-lab.github.io/Elsha/admin.html" class="footer-admin" target="_blank" rel="noopener">Admin Login</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">© 2026 ELSHA. All rights reserved.</p>
+  </div>
+</footer>
 <dialog id="pd" aria-label="Product details"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="pd"><img id="pi" alt=""><div class="t"><h3 id="pn"></h3><p id="pdsc"></p><ul id="pf"></ul><div class="btns"><button class="btn alt" id="pwa" type="button">অর্ডার করুন</button><a class="btn line" href="#" data-contact>যোগাযোগ</a></div></div></div></dialog>
 <dialog id="ct" aria-label="Contact"><button class="x" aria-label="বন্ধ করুন" data-close>×</button><div class="ct"><h3>যোগাযোগ করুন</h3><p style="color:var(--soft)">কাস্টম অর্ডার বা যেকোনো প্রশ্নে আমাদের জানান।</p><div class="row"><small>Phone / WhatsApp</small><a href="tel:+8801621125589">+8801621125589</a></div><div class="row"><small>Address</small><b style="font-size:19px">Dohar-Joypara<br>Dhaka-Bangladesh</b></div><div class="btns" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn" href="tel:+8801621125589">কল করুন</a><a class="btn alt" href="https://wa.me/8801621125589" target="_blank" rel="noopener">WhatsApp</a><a class="btn line" href="https://www.facebook.com/profile.php?id=61559866586686&mibextid=ZbWKwL" target="_blank" rel="noopener">Facebook</a></div></div></dialog>
 <dialog id="checkoutDlg" aria-label="ELSHA Checkout">
