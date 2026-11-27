@@ -1,0 +1,13 @@
+
+/* ELSHA Admin — matching atelier identity */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--ink:#39283B!important;--accent:#C6A06A!important;--bg:#F8F4EE!important;--line:#E9DFD7!important;--soft:#766B75!important;--tint:#F1E9E6!important;--blue:#F5ECE8!important}
+body,button,input,select,textarea{font-family:"Noto Sans Bengali","Hind Siliguri",sans-serif!important;line-height:1.7!important}
+body{background:#F8F4EE!important;color:#39283B!important}
+.side{background:linear-gradient(180deg,#39283B,#50384F)!important}
+.card,.stat,.item,.table-wrap{border-radius:4px!important;border-color:#E9DFD7!important;box-shadow:0 8px 24px #39283b09!important}
+.btn{border-radius:4px!important;background:#39283B!important}
+.btn.alt{background:#C6A06A!important;color:#2C2030!important}
+input,select,textarea{border-radius:4px!important;border-color:#DCCFC7!important}
+th{background:#F5EFEB!important;color:#715D6D!important}
+@media(max-width:760px){main{padding:15px!important}.shell{grid-template-columns:1fr!important}.side{position:relative;height:auto!important}.nav{display:flex;flex-direction:row!important;overflow:auto}.nav button{flex:none}}
