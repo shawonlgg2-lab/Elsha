@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Redirecting to ELSHA</title>
+  <script>
+    (function () {
+      var canonical = "https://shawonlgg2-lab.github.io/Elsha/";
+      var currentPath = window.location.pathname;
+
+      // Redirect only the lowercase repository path to the canonical URL.
+      if (currentPath.toLowerCase() === "/elsha" ||
+          currentPath.toLowerCase() === "/elsha/") {
+        window.location.replace(canonical + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <main>
+    <h1>Page not found</h1>
+    <p>The ELSHA page may have moved. Please open the official website:</p>
+    <p><a href="https://shawonlgg2-lab.github.io/Elsha/">ELSHA — Handmade Crochet</a></p>
+  </main>
+</body>
+</html>
