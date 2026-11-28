@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /cart.html
+Disallow: /wishlist.html
+
+Sitemap: https://shawonlgg2-lab.github.io/Elsha/sitemap.xml
